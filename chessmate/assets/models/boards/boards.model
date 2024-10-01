@@ -1,0 +1,284 @@
+{
+	"assets"		:	{
+							"modern-board"	:	{
+													"type"			:	"ChessBoard",
+													"file"			:	"modern/board.json",
+													"description"	:	"Modern Board",
+													"flatShading"	:	false,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"materials"		:	{ 
+																			"*"		:	
+																			{	
+																				"type"			:	"StandardMaterial",	
+																				"metalness"		:	0.6,
+																				"roughness"		:	0.5,
+																				"envMap"		:	{
+																										"type"		:	"Texture",
+																										"mapping"	:	"SphericalReflectionMapping",
+																										"file"		:	"/assets/textures/spherical/env9.jpg"
+																									}	,
+																				"envMapIntensity":	2
+																			}
+																		},
+													"children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	16,
+																									"height"		:	16,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"red",
+																									"sunColor"		:	"red",
+																									"sunDirection"	:	[0,1,-2]
+																								}													
+																		}
+												},
+							"samsung-board"	:	{
+													"type"			:	"ChessBoard",
+													"file"			:	"samsung/board.json",
+													"description"	:	"Samsung Board",
+													"flatShading"	:	false,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"materials"		:	{ 
+																			"receiveShadow"	:	true,
+																			"white":	
+																			{	
+																				"color"		:	"white",
+																				"specular"	:	"black"
+																			},
+																			"base":	
+																			{	
+																				"color"		:	"black",
+																				"shininess"	:	0,
+																				"emissive"	:	{"start":"#448", "end":"#77c", "duration":1, "loop":"PingPong", "easing":"Quadratic.InOut"}
+																			},
+																			"glow":
+																			{
+																				"opacity"		:	{"start":0, "end":0.7, "duration":1, "loop":"PingPong", "easing":"Quadratic.InOut"},
+																				"alphaTest"		:	0
+																				
+																			}
+																		},
+													"children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0.05],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	17.2,
+																									"height"		:	17.1,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"red",
+																									"sunColor"		:	"red",
+																									"sunDirection"	:	[0,1,-2]
+																								}
+																																			
+																		}
+												},
+							"marble-board"	:	{
+													"type"			:	"ChessBoard",
+													"file"			:	"marble/board.json",
+													"description"	:	"Marble Board",
+													"flatShading"	:	true,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"!materials"		:	{ 
+																			"*"		:	
+																			{	
+																				"type"			:	"StandardMaterial",	
+																				"metalness"		:	0.6,
+																				"roughness"		:	0.5,
+																				"envMap"		:	{
+																										"type"		:	"Texture",
+																										"mapping"	:	"SphericalReflectionMapping",
+																										"file"		:	"/assets/textures/spherical/env9.jpg"
+																									}	,
+																				"envMapIntensity":	2
+																			}
+																		},
+													"children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0.04],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	18.5,
+																									"height"		:	18.3,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"black",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								}													
+																		}
+												},
+							"chalkblock-board":{
+													"type"			:	"ChessBoard",
+													"file"			:	"block/chalkboard.json",
+													"description"	:	"Chalk Block Board",
+													"flatShading"	:	true,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"!materials"	:	{ 
+																			"*"		:	
+																			{	
+																				"type"			:	"PhongMaterial",	
+																				"color"			:	"#aaa"
+																			}
+																		},
+													"!children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0.04],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	16,
+																									"height"		:	16,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"black",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								}													
+																		}
+												},
+							"woodfold-board":	{
+													"type"			:	"ChessBoard",
+													"file"			:	"block/woodfold.json",
+													"description"	:	"Wood Folded Block Board",
+													"flatShading"	:	true,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"!materials"	:	{ 
+																			"*"		:	
+																			{	
+																				"type"			:	"PhongMaterial",	
+																				"color"			:	"#aaa"
+																			}
+																		},
+													"!children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0.04],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	16,
+																									"height"		:	16,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"black",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								}													
+																		}
+												},
+							"ornateflat-board":	{
+													"type"			:	"ChessBoard",
+													"file"			:	"ornate/flat.json",
+													"description"	:	"Wood Folded Block Board",
+													"flatShading"	:	false,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"materials"	:	{ 
+																			"*"		:	
+																			{	
+																				"type"			:	"PhongMaterial",	
+																				"color"			:	"#ccc"
+																			}
+																		},
+													"children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0.04],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	18,
+																									"height"		:	18,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"black",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								},
+																			"!mirror2"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,-2,9.1],
+																									"rotation"		:	[90,0,0],
+																									"width"			:	18,
+																									"height"		:	4.1,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"black",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								}													
+																		}
+												},
+							"ornatethick-board":{
+													"type"			:	"ChessBoard",
+													"file"			:	"ornate/thick.json",
+													"description"	:	"Wood Folded Block Board",
+													"flatShading"	:	false,
+													"castShadow"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													
+													"materials"	:	{ 
+																			"*"		:	
+																			{	
+																				"type"			:	"PhongMaterial",	
+																				"color"			:	"#aaa"
+																			}
+																		},
+													"!children"		:	{
+																			"mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.02,0.04],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	18,
+																									"height"		:	18,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.2,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"black",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								}													
+																		}
+												}
+						}
+}

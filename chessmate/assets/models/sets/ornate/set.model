@@ -1,0 +1,109 @@
+{
+	"type"			:	"ChessSet",
+
+	"side"			:	"FrontSide",
+
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+
+	"style"			:	"normal",
+	
+	"styles"		:	{
+							"normal"		:	{
+													"flatShading"	:	false,
+													"castShadow"	:	true,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"type"			:	"PhongMaterial",	
+																				"transparent"	:	true,
+																				"opacity"		:	1,
+																				"depthTest"		:	true
+																			}
+																		}
+												},
+							"faded"			:	{
+													"castShadow"	:	false,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"opacity"		:	0.5,
+																				"depthTest"		:	false
+																			}
+																		}
+												},
+							"black"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"			:	"#b89A77"
+																			}
+																		}
+												},
+							"white"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"			:	"#fff"
+																			}
+																		}
+												}
+						},
+	
+	"assets"		:	{
+							"ornate-king"	:	{
+													"file"			:	"K.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	2.8
+												},
+							"ornate-queen"	:	{
+													"file"			:	"Q.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	2.8
+												},
+							"ornate-bishop":	{
+													"file"			:	"B.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"flatShading"	:	false,
+													"scale"			:	2.8
+												},
+							"ornate-knight":	{
+													"file"			:	"N.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"rotation"		:	[0,90,0],
+													"scale"			:	2.8
+												},
+							"ornate-rook"	:	{
+													"file"			:	"R.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	2.8
+												},
+							"ornate-pawn"	:	{
+													"file"			:	"P.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"flatShading"	:	false,
+													"scale"			:	2.8
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"ornate-king",
+													"queen"			:	"ornate-queen",
+													"knight"		:	"ornate-knight",
+													"bishop"		:	"ornate-bishop",
+													"rook"			:	"ornate-rook",
+													"pawn"			:	"ornate-pawn"
+												},
+							"black"			:	{
+													"king"			:	"ornate-king",
+													"queen"			:	"ornate-queen",
+													"knight"		:	"ornate-knight",
+													"bishop"		:	"ornate-bishop",
+													"rook"			:	"ornate-rook",
+													"pawn"			:	"ornate-pawn"
+												}
+						}
+						
+}

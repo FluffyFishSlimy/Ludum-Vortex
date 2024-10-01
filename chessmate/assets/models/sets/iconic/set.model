@@ -1,0 +1,110 @@
+{
+	"type"			:	"ChessSet",
+	"description"	:	"Iconic chess set",
+	"credit"		:	"Itizso",
+
+	"flatShading"	:	true,
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"side"			:	"FrontSide",
+
+	"style"			:	"normal",
+	"styles"		:	{
+							"normal"			:	{
+													"castShadow"	:	true,
+													"materials"		:	{
+																			"*":
+																			{
+																				"type"			:	"PhongMaterial",
+																				"transparent"	:	true,
+																				"opacity"		:	1,
+																				"shininess"		:	30,
+																				"specular"		:	"#111",
+																				"depthTest"		:	true
+																			}
+																		}
+												},
+							"faded"			:	{
+													"castShadow"	:	false,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"opacity"		:	0.5,
+																				"depthTest"		:	false
+																			}
+																		}
+												},
+							"white"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"#B89A77"	
+																			}
+																		}
+												},
+							"black"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"#5d1a06"
+																			}
+																		}
+												}
+						},
+	
+	
+	"assets"		:	{
+							"iconic-king"	:	{
+													"file"			:	"K.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"iconic-queen"	:	{
+													"file"			:	"Q.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"iconic-bishop"	:	{
+													"file"			:	"B.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"iconic-knight"	:	{
+													"file"			:	"N.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"rotation"		:	[0,90,0],
+													"scale"			:	0.90
+												},
+							"iconic-rook"	:	{
+													"file"			:	"R.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.95
+												},
+							"iconic-pawn"	:	{
+													"file"			:	"P.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.95
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"iconic-king",
+													"queen"			:	"iconic-queen",
+													"knight"		:	"iconic-knight",
+													"bishop"		:	"iconic-bishop",
+													"rook"			:	"iconic-rook",
+													"pawn"			:	"iconic-pawn"
+												},
+							"black"			:	{
+													"king"			:	"iconic-king",
+													"queen"			:	"iconic-queen",
+													"knight"		:	"iconic-knight",
+													"bishop"		:	"iconic-bishop",
+													"rook"			:	"iconic-rook",
+													"pawn"			:	"iconic-pawn"
+												}
+						}
+						
+}

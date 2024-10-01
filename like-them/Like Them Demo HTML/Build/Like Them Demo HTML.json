@@ -1,0 +1,16 @@
+{
+"companyName": "Raimondi Games",
+"productName": "Like Them",
+"productVersion": "0.1",
+"dataUrl": "Like Them Demo HTML.data.unityweb",
+"wasmCodeUrl": "Like Them Demo HTML.wasm.code.unityweb",
+"wasmFrameworkUrl": "Like Them Demo HTML.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.14f1"
+}

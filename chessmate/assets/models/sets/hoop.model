@@ -1,0 +1,20 @@
+{
+	"file"			:	"assets/hoop.json",
+	"style"			:	"selected",
+	"side"			:	"FrontSide",
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	
+	
+	"styles"		:	{
+							"selected"		:	{
+													"rotation"		:	{	"start":[0,0,0], "end":[0,359,0], "duration":4, "loop":"Repeat"	},						
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"yellow"	
+																			}
+																		}
+												}
+						}
+}

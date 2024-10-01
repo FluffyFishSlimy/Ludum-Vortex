@@ -1,0 +1,119 @@
+{
+	"type"			:	"ChessView",
+	"camera"		:	{	
+							"position" 		: 	[-2.59 , 29.08 , 25.17],
+							"target" 		: 	[0.21 , -0.36 , 1.32]
+						},
+	"camera"		:	{	
+							"position" 		: 	[-2.96 , 28.73 , 25.53],
+							"target" 		: 	[0.21 , -0.36 , 1.32]
+						},
+						
+						
+						
+						
+	"style"			:	"init",
+	"side"			:	"FrontSide",
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"effects"		:	{
+							"!film"			:	{
+													"type"				:	"FilmEffect",
+													"noiseIntensity"	:	0.4,
+													"scanlinesIntensity":	0.6,
+													"scanlinesCount"	:	1200
+												},
+							"!shift"		:	{
+													"type"			:	"RGBShiftEffect",
+													"amount"		:	0.004,
+													"angle"			:	90
+												},
+							"!wave"			:	{
+													"type"				:	"WaveEffect",
+													"thickWave"			:	0.4,
+													"thinWave"			:	0.4,
+													"speed"				:	0.02,
+													"roll"				:	0.0
+												}
+
+												
+						},
+	
+	
+	"assets"		:	{
+							"hoop"			:	{
+													"file"			:	"/assets/models/sets/hoop.model",
+													"scale"			:	1
+												},
+							"status"		:	{
+													"file"			:	"/assets/fonts/msdf/roboto/Roboto-Regular.msdf",
+													"position"		:	[0,0.4,9.7],
+													"rotation"		:	[-90,0,0],
+													"scale"			:	2.6,
+													"color"			:	"white",
+													"side"			:	"Front",
+													"text"			:	" ",
+													"width"			:	25,
+													"negate"		:	false,
+													"align"			:	"center",
+													"valign"		:	"center",
+													"letterSpacing"	:	0,
+													"lineHeight"	:	50,
+													"opacity"		:	1,
+													"receiveShadow"	:	false,
+													"extractInfo"	:	false,
+													"castShadow"	:	false,
+													"wireframe"		:	false,
+													"visible"		:	false,
+													"styles"		:	{
+																			"fadeIn"		:	{
+																									"opacity"		:	{"start":0,"end":1, "duration":0.5, "loop":"Once"}
+																								},
+																			"fadeOut"		:	{
+																									"opacity"		:	{"start":1,"end":0, "duration":0.5, "loop":"Once"}
+																								}
+																		}						
+												}
+						},
+						
+
+	"squares"		:	{
+							"size"			:	2,
+							"white"			:	{
+													
+												},
+							"black"			:	{
+												}
+						},
+						
+	"children"		:	{
+							"!mirror"		:	{
+								"type"			:	"Water",
+								"normals"		:	" ",
+								"position"		:	[0,0.02,0],
+								"rotation"		:	[0,0,0],
+								"width"			:	16,
+								"height"		:	16,
+								"distortion"	:	0.01,
+								"alpha"			:	0.2,
+								"speed"			:	0.1,
+								"waterColor"	:	"white",
+								"sunColor"		:	"white",
+								"sunDirection"	:	[0,1,-2]
+							}						
+						},
+						
+	"styles"		:	{
+							"init"			:	{
+													"materials"		:	{
+																		}
+												},
+							"thumbnails"	:	{	
+													"materials"		:	{
+																			"secret"		:	{"map":"/assets/models/locations/secret/thumbnail.jpg"},
+																			"halloween"		:	{"map":"/assets/models/locations/halloween/thumbnail.jpg"},
+																			"retro"			:	{"map":"/assets/models/locations/retro/thumbnail.jpg"}
+																		}
+												}													
+						}
+}

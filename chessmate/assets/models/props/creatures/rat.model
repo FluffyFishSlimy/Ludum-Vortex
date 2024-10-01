@@ -1,0 +1,30 @@
+{
+	"file"			:	"rat.json",
+	
+	"side"			:	"DoubleSide",
+	
+	"flatShading"	:	false,
+	
+
+	"actions"		:	{
+							"idle"			:	{	"start":11	,	"end":12	,	"duration":1.0	,	"next"	:	"idle"	,	"weight":2	,	"crossfade"		:	0.2},
+							"idle.breathe"	:	{	"start":12	,	"end":18	,	"duration":1.2	,	"next"	:	"idle"	,	"weight":2	,	"crossfade"		:	0.2},
+							"idle.attack"	:	{	"start":0	,	"end":11	,	"duration":1.2	,	"next"	:	"idle"	,	"weight":1	,	"crossfade"		:	0.2}
+						},
+						
+	"style"			:	"standard",
+
+	"styles"		:	{
+							"standard"			:	{	
+														"materials"	:	{ 
+																			"*"	:	
+																			{	
+																				"type"			:	"PhongMaterial",
+																				"color"			:	"grey",
+																				"specular"		:	"black"
+																			}
+																		}
+													}
+													
+						}
+}

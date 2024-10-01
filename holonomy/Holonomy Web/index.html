@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W36PRKYGSN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-W36PRKYGSN');
+    </script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
+		<title>Holonomy</title>
+		<style>body {--default-bar: linear-gradient(90deg, #2a2558, #2a2558);}</style>
+		<style>
+/*Adapted from https://gitlab.gnome.org/World/warp/-/blob/main/data/resources/style.css */
+.flag-pride {
+  background: linear-gradient(to right,
+	  #E40303 16.7%,
+	  #FF8C00 16.7%, 33.3%,
+	  #FFED00 33.3%, 50%,
+	  #008026 50%, 66.6%,
+	  #24408E 66.6%, 83.3%,
+	  #732982 83.3%);
+}
+
+.flag-trans {
+ background: linear-gradient(to right,
+   #5BCEFA 20%,
+   #F5A9B8 20%, 40%,
+   #FFFFFF 40%, 60%,
+   #F5A9B8 60%, 80%,
+   #5BCEFA 80%);
+}
+
+.flag-aro {
+ background: linear-gradient(to right,
+   #3da542 20%,
+   #a8d377 20%, 40%,
+   #fefefe 40%, 60%,
+   #a9a9a9 60%, 80%,
+   #000000 80%);
+}
+
+.flag-ace {
+ background: linear-gradient(to right,
+   #000000 25%,
+   #A3A3A3 25%, 50%,
+   #FFFFFF 50%, 75%,
+   #800080 75%);
+}
+
+.flag-bi {
+ background: linear-gradient(to right,
+   #D60270 40%,
+   #9B4F96 40%, 60%,
+   #0038A8 60%);
+}
+
+.flag-intersex {
+ background: linear-gradient(to right,
+   #FFD800 50%,
+   #7902AA 50%);
+}
+
+.flag-lesbian {
+ background: linear-gradient(to right,
+   #D52D00 14.3%,
+   #EF7627 14.3%, 28.6%,
+   #FF9A56 28.6%, 42.9%,
+   #FFFFFF 42.9%, 57.1%,
+   #D162A4 57.1%, 71.4%,
+   #B55690 71.4%, 85.7%,
+   #A30262 85.7%);
+}
+
+.flag-disability-pride {
+ background: linear-gradient(to right,
+   #585858 22.2%,
+   #CF7280 22.2%, 33.3%,
+   #EEDF77 33.3%, 44.4%,
+   #E9E9E9 44.4%, 55.5%,
+   #7AC1E0 55.5%, 66.6%,
+   #3AAF7D 66.6%, 77.7%,
+   #585858 77.7%);
+}
+
+.flag-black-history {
+ background: linear-gradient(to right,
+   #000000 25%,
+   #c31f1e 25%, 50%,
+   #f9ca00 50%, 75%,
+   #1c6935 75%);
+}
+
+.flag-aids {
+ background: linear-gradient(to right,
+   #ffffff 20%,
+   #d11113 20%, 40%,
+   #ffffff 40%, 60%,
+   #d11113 60%, 80%,
+   #ffffff 80%);
+}
+
+.flag-autism {
+ background: linear-gradient(to right,
+   #e53043 16.7%,
+   #f68347 16.7%, 33.3%,
+   #fac857 33.3%, 50%,
+   #fac857 50%, 66.6%,
+   #99d671 66.6%, 83.3%,
+   #21ae75 83.3%);
+}
+
+.flag-non-binary {
+ background: linear-gradient(to right,
+   #fff534 25%,
+   #ffffff 25%, 50%,
+   #995acf 50%, 75%,
+   #2e2e2e 75%);
+}
+
+.flag-pan {
+ background: linear-gradient(to right,
+   #ff218c 33.3%,
+   #ffd800 33.3%, 66.6%,
+   #21b1ff 66.6%);
+}
+
+.flag-none {
+	background: var(--default-bar);
+}
+
+body {
+
+	/* iffy rainbow */
+	/*--loading-gradient: linear-gradient(135deg, red 10%, orange 10%, orange 20%, yellow 20%, yellow 30%, green 30%, green 40%, blue 40%, blue 50%, indigo 50%, indigo 60%, violet 60%, violet 70%, rgb(219, 58, 133) 70%, rgb(219, 58, 133) 80%, red 80%);*/
+	/*--loading-gradient: linear-gradient(135deg, lightcoral, lightcoral);*/
+	/*--loading-gradient: repeating-linear-gradient(135deg, white, black, white 20%);*/
+	/*--loading-gradient: linear-gradient(90deg, #5BCEFA 20%, #F5A9B8 20%, 40%, #FFFFFF 40%, 60%, #F5A9B8 60%, 80%, #5BCEFA 80%);*/
+	/*--loading-gradient: linear-gradient(90deg, white, #555, white, #555, white, #555, white, #555, white, #555, white);*/
+
+	touch-action: none;
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	text-align: center;
+	background-color: black;
+}
+
+#canvas {
+	display: block;
+	margin: 0;
+	color: white;
+}
+
+#canvas:focus {
+	outline: none;
+}
+#fuzz-load {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	position:absolute;
+	display:flex;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+}
+.dark {
+	color: white !important;
+	background-color: black !important;
+}
+#fuzz-center {
+	overflow: hidden;
+	margin: 5vw;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#fuzz-text {
+	margin-top: 30px;
+	width: 100%;
+	user-select: none;
+	position:relative;
+	display: flex;
+	flex-direction: row;
+}
+#fuzz-text > span {
+	font-weight: bolder;
+	font-size: 8vw;
+	flex-grow: 0;
+}
+#fuzz-text > #underline {
+	text-align: center;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom: 0;
+	text-decoration: underline;
+	color: transparent;
+	text-decoration-color: black;
+}
+.dark #fuzz-text > #underline {
+	text-decoration-color: white !important;
+}
+.animate__bounce {
+	text-shadow: 0px 0px 0.5vw black;
+}
+.dark .animate__bounce {
+	text-shadow: 0px 0px 0.5vw white !important;
+}
+#fuzz-text > .fuzz-text-pad {
+	margin-left: 1vw;
+	margin-right: 1vw;
+	flex-grow: 1 !important; 
+	background-image: linear-gradient(to top, transparent 45%, black 45%, black 55%, transparent 55%);
+}
+.dark #fuzz-text > .fuzz-text-pad {
+	background-image: linear-gradient(to top, transparent 45%, white 45%, white 55%, transparent 55%) !important;
+}
+
+#fuzz-progress {
+	overflow: visible;
+	position: absolute;
+	left: 0%; /*-100%*/
+	top: -30px;
+	bottom: 0;
+	width: 100%;
+	mix-blend-mode: screen;
+	/* Background gradient defined by JS*/
+	background-attachment: fixed;
+	background-position-x: 0vw;
+	background-repeat: repeat;
+}
+.scroll-anim {
+	animation: slide 3s linear 0s infinite normal both;
+}
+#fuzz-progress::after {
+	content: "";
+	position: absolute;
+	left: 100%;
+	right: -100%;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(100%, 100%, 100%, 90%);
+}
+.dark #fuzz-progress::after {
+	background-color: rgba(0%, 0%, 0%, 90%) !important;
+}
+.dark #fuzz-progress {
+	mix-blend-mode: multiply !important;
+}
+@keyframes slide {
+	0% {background-position-x: 0vw;}
+	100% {background-position-x: 100vw;}
+}
+@keyframes test2 {
+	100% {filter: hue-rotate(360deg);};
+}
+@keyframes test {
+	0% {left: 0%;};
+	100% {left: -100%;};
+}
+.fuzz-fail {
+	color: lightcoral;
+}
+#fuzz-status {
+	font-size: 3vw;
+}
+#sheepy {
+	mix-blend-mode: multiply;
+	filter: invert(100%); 
+	/*Aspect: 203:184*/
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB+4AAAC4AQMAAAD3zFcIAAAABlBMVEUAAAD///+l2Z/dAAAhu0lEQVR42tyXv6oTQRjFzzjgWEjGUjFmfQTBZsWQfRVB0E4igi6oyYqFjX9aBcEXER0RtBEfQUcE7XTFwhWXjCDikHBOYTEK9zSXy+VOvt/M+c73Bf9eNg3gWifsfTVJULqUIva6zAZV4PcS7IC9LtdDUG6ANbiuYa+o6gSN7QHf8f9JPfaIVgBmIPIBsAFEJqURe0QDANexJwYA+so+vUzd380Kr1LU/N+btBGADaq/W5qJPZr4d7NC+qVKqcP/k+sAGFZ0DwBz+mCAo7ZoFKVLijKl/5ojVUYltqCp4AYAA2UJJvFPGYRfbIL7R+4/hB3l522FLeBZH0dhC7uB2CHWQUxXP+TpWlgnsKMMXmNLGdwxi3fCFr4HXOSrFTDy1QqoOhRXk+IZqA7HFFvKtrcdXYcAr+5l4KsVUAH8LBtRWialTcSOcuhNVFeYgF2ZAWJWrtRC6AMA34GfZcpnnxf4tlMeX+KXItkGhS3MmF1DbGGDsAValNY6pcTM76Dwo8L3ARzG9qorVtlo7Kw5CsukiOYN+cMEtMWz65fkS4KAcVF1xZhjhp01Q2G5BOxL2FHOPNORrhDjYpFtQVi0LdAKW8CjsPwAmKeBBRxNuPyINVmGxVs20LYQHh/zZ5VUEwHztldjHwh87AOHsatBdcVK3YsP4B43A7JhCmrdAebloMY+EMnY5xuB6SGsPKg/VBAetzEbppDydnFjI/MdZ0Qo4KAoGbW6l5qkhRgvLuQqyiibzGINku/Uyhliokqeiw0KUxUwtlMBs0Qp5e3CoQkq37Hcz7ceTBB2S6aUuYNnKmCsDJgWpZSzZz+qqK4fJ7wIhf0m8pJn6qyJChgTVMDUKKU8kQ/C9WLpA+pKhIKzkZTMKH33+6cKBRNZKBRY++hEPgA7HOJLH1CfFqHg3BlSMsUHT7iMHUUoYIqCyiWPh4T7cPgkb2TY/Wd4yZ44mSeclfna5qssp/wldHVCjDccPisy0R7cwW/VIy8UvpP4Qxl89THNcTHeMD0nQsHeDjwTHWbcFiaofK0BdVY55exBFRX+wQ8C3zxU+N2C2ILhewh8E8vgq4/xUUx3HHzheSaa+88iPcuGyxwf0QaOP0ULflbnUU72zy1r/NeNwH/wUuF/4rZA9JHn69SMIl+7pkMp5eyxUUx3+Fc/OpqJ5vujJS/52WuFXyl8K/HXJfG7XKLCv/Ne4H95LPDfveZOxnK6pJmIib3L6zLhYkAx+T8fM4jlBv7RLZ6J5msf+VW+fzgI/Frhu4nCf1cQv/pT4jWF7556jo9v7wT+x2bkZy3bz5GeNfHHRj5enr1/StxfGj9vKO7JjGcivj0PtGRcaV7RrkC9TJGOBDepRjoS8O55Koafs2ffQuKPtcBPt8BLXq0m/Kz63XiGnuWmzW06XvD+1pdy+Is/+NUOfn7UdjsVc/2fZ+Alr8Yp74r63XZc9Bl/Md1+loz/vBz+fKsNqJPdl8hHAjZzgX+9n3P8U8+DwK9bgf/R23L4ueO9xP8YBP44gJd8Pbb8rCMvbwR6lq37mk5XnJ85IKsY/vYd78/Fv8WWcv0/InjJV5/1HP/ovZsdx7/YL/lZFxYTFFOL7FDhZPdYTER86wT++lbkmXj0keMLgb0UI2/KC9e2uqIYflD4g8JPKkfWVeBnVYsZP8t+fB74cnFtaFFMGc1K/I3ED+AlrxIE/nyu8G91Ar/vUUw9wL/zHMz422uHyb+lXuCvR4U/DgI//aTmfnZ1iKEAgJ+q6EbUkkRuiYUtKxJiPIpHkFj4Fh9fxcJGeAEJj2FFRcKOrRUVC0sVEk00U9E5mdNT05AMEjYi9071155zpp1/D3ptfWYd++f8A9J3+G7b63Ls8bPv8VOvLT76f4svevxDEJb5wu11unxt/N/5x6qBYLVHEt/qzuNhV0yHf0SFDh/GDv+y+Xs7PlHxQ5d/rsdXnc3AFWVZW8SHyNsivuFtEV/+vdwX/nf4x3p8aTt83uW9ir9d3grKZtm1IT7r2F/j8wyHG8Tnd7K1I77o8SF0gh8u9oJfuU7ws4D5R3yZHfHZqnMXK77r8a/0+KbHl77DZwHzj/j6WaA0OFAfEW9UaeB4wFCXN8v8wxTjnL8PRFjmX2IB84/4e7ClGVMsXWeABPA8YIjPqqUeia8YP7uZz///IRKfnV7/DX8De8t8DdIx/tI5/RJVS37qPs3X1joH2mBu2LjMI+bYVvwv8m8A/Qm1WdZhwcyX6wn7EDmfLPMkH+f8IeMhsJ/zFb1AaP8Mfz8s/Kkpn0Y2LLLm0xxdIHPDHyGxUaLDY2Vm1XJXmVm+aF+Z1Z/gH/wV/+tHfkJe4B9ic8T5ItZTfqh5dHGZnwCW+cbCH+Yf+cWiFz4+rsB2ka8BrvT4kpANX9tOuvFif6G5Akt8uwref0aIacbUG3DJEr/DV67HNxWYGmhG7DgrF9s6aeVf4w+RevYtVL3v8YXr8m2Pf5ENq18eMc/4sVp9/xn+ZvlFjuq8NS73XtLOZuD8K7VFsw3DIR7V1K6o+eQSjgV/qKdNrecPKS2+K5Zd9VbDcuFWQHxeE32PvyE+H3gePprV2nO8QNDRarVe5LR01UAH42blSKPMAvEQLXrPskAUDtziiIlIfF5ftsTnMaYt47u6PK7n6+U3Ik29aYmS8xfW/NeIz9f8/BA5Mn6Yr4WIbGUzYtj4EGDTnncdXmjV62M/37uXOnf46OK8nQvahaqwJbJctVOEHKTBYxmOo6OzPdbyC05lLy3nIy4nuML5mAEm20Or+Tnom7lzj4eGyM45fY76LTOtmD5bVQX6zovKco5OZbt7jvjIGIvlfVS2GbGSfjLtIDQ1UcapLb+3PvVBw852r/Jj6Qfi0wMf+gNN5TvkD+XHKciWr2KJfRUuNHxRxja7UUPDH36wTTRPfcNXYxl8GS+s5asIh+jJvc6qS6eGLx+X4b/lccEI4p2b+NdcqZtb2hc4jO5dWUyI1NYx+dEDqAyDbpci1xMAZK/e1fzSnycWwCRIq/nawR6o2Nnv0ZBzvrrnyhzEczPET/xPsUylUUSc+NpE0NlB3rT8F7Hc/dBvWv4ml2IhvrmWbzyIHGDYrK58AMdApAYPkvMd1arSMa1SuZNz8fRc6ie+8NmCGUE9J+JUufZ0zjmXiOZ1TN3KXucAKrULgrBLZXdfn5g1tmWH7MCEtfwbP/jtHUkJ0mHX+QpcIH9P/LBYMA/n+LiiJtBQTqTyS8u/IMoPQPuGr2FqS8SGL7yZDhmg4V+QOecRQPm1/FgCbbANXzlk81SQjyb+Bfzkgopzrya+sqpYaECFhc0E0jlh1Wa7xz1sC1KzHpIO2zK2WQ9tYBoXGVbfzCh87Rb5+krDV/cxK0GWjskSl8VwTuHk7MoqaheaNWugV5Y5/yKoaYF9seErBzlHyj3iRzA54+StfnD3NEUR8QvLbJvzgD7GLZBHwBPVMcXWtyY7xhee0o3zt4A5bBq+tiBH7CTxsTs7t/pDSDSwMrD1o/ET/+JQ8Hbm7h0qFunbT8tE5G9/+rTMAQ/n6hmkTD5d+JTy2nL+QCHK+TRZF1fyES0jqy+nkJ9MKc002xcONBbICTt4SPFoNJgXxwKcQ5ucQsoS32H+hnaPv2GfRoq8w/RpJLPGTserBPnn3BdRhzLEM39Q9hgeJUfcGOM1OyUthsXO4cJ3OoNv4AIeYipl4Qk3/VOmNsbPIXpnmxhX2JYOFDCrn108sBUffuZLL8finPlK22M4L6q4Eatj4U8lFPNBx/JXugB4CAwREw1rYOEbC9iWCIwvA7bFLwphWybRUK5+eu3QDfGS8WVBufIBg0Qdk/dLOMZp70bveugR1K0flpL1oS7x4wb2MMN3iYVyKPVwoLYiW/MrP7dl+AI0AcBARXH980sH38r7jF/aHWz5fEUkvngNhwBUqEq7xA6amw5fes6xLvHqMuzhb+1Gtpk8XfiJ2toyvrFzW9pWfGyLAmb9IxzH3qpz7QmxYPTE93SxRuNGdEA+xKlXg/DTkkYhHwxgSxowK8a2XAeQkfgX2X5/B8hnMS4daI/8tSf+2XX01d0rp9vlkEjlkl/eEh8CqKljxN9OvboCHrSv+dpif8shdPVU18GnQ2nLo5lKshhLWwnbqOZlKEOZ7drXmCl3zty79yG1H4jQU5D5C1WKeZBWRph+UFVP4T1cKchpbYtzhnxb6oBEviLMtlgKn6e4tipWfPakSQbib9fxsScnbr/Nd9hPcqnp6JOu4vuhdCYjH+fsnYOtSgWBfDxKWJDOxIlvG8wg8zSUoU1xv/NlKMc2xZNOJZIoX9a/rnRS5cgHchd3GdBXzdclDGHkUyx/sjiHxBce+dhXhXxBfJMT8uve4FARH4hffpf4e3+Ev0/mZ7H9IGAC9PHVRY6cr/BSJ5gMjA/Ix5qHOxuGMTnUfFfxR6j4sea7im9Wr3mRb1x7lyfMecj4HohPQ3ger2cTn5giB8a/UvGh4ktf8X3N31b8BBVf2z/BBzmOTVV4NdId9cxuQyMJ+biSH+ZbhQPyiSktMP6GrW2JL4ivAGr+BT76xFer+IdosmPDr8pQHmu+XeRfBDjd56MF+edafu7xTY8v/wh/j/jj8hsrsn2oVnb5V3p8BZx/jDZ2xOdFQROfVzjB+dKt5mMPltICK1es+bDAL6TLv+Z/b+58du+ZoQDeqqgFU0uLMeMRSEQGw3gTHkBiRCIjbtyKhB2WVngQiYqFjbC1ECoEC38qhErGHfpnetpOyxV/IpKf+71z255Pe87p6d95B1aC4l9sHgbwm+CAdYYvdvzt7+ODUskpP7ECxZ1ui9Ui4H8mUnwZ8JcU/6aA/wmHvFN8m3gp4K82aQmfgzL8fXxWPn2DhVHsIv4W498e4W86xW/g3llUwxc1fF3FR38bfwB8Ksr4MutcbwJ8njpJEfBVDX/NjoKpgJ+J0wV8y0fzOJXsef1D+ILI8hOZda5NwL+koRMGfBHgbgYWg68yfAkdX6qMbdrxUZ57Xgih/pFtLQKrKj4VOT6EPTk+hD2A3wZ8/r/FzzKaETAQecC/weA7OJZa5cMGHzu7CfgQx/Ma/u01fFLFf/Tv4s8Rvq7gz7CYAr0WQaZ8tzKfxkOP9pv2K/PS/fp6/LaGT6r48z+PD4LdjPD3CmF9wMd82wTd9jHnw4B/l8G3hkGFx2ijzWLigO/H+20Jn26rAc7x/Xh//gfwYSUuxfes2JCsBfzzJvqXDcwpw2ebJt9rPxx5KMNnEtwH4Pc1fFLFP/+z+CjFx8Kxuq34zx7xxXnjD1Hl53AfBfyBbYqKi1+ludd6NIgsJ1XD76r4ooa//F189Sf4DSIbLDfdAPhITBvSePXTvhLwb6eb7NHE3bTvkxG+OF+QniELwGebwFuKDyOxSZbwpw3R9R/D90qc49+EqIZ1KeLxZ8PSX7AyizCTBPzG4JNNPISYctJ9xoFFTCuWi/+bxPh042zjBXy0KbypEn5/QdPln8QfC+Pdm9x8JxOA3zhXINlKBOov7hivcjXWGwS88cXYjBEbvy0sC7Z11GsiTjs+d/g3OR3n/Vs5vrA6rsjPOf7t/hTMs/8o/qmAT7k1ViojfKcZkmrK9zgWf+jwByv4ZrJ1MTHh0uFzm0S5G8uGELxKa1c34As6UZHguzIfngTjOsNfTZdENVb9P4m/FPCJtPEYUTE+sSxIsDBSJ6/CLpYW3Y7lPlKn/iviTh0KhiaPf5PHX32+mqgUv+fOpfbo2RSfKGeCRDLxb+M7PKzh5rqGPu+ttgvrvPQWi68edWpLxL702aHW7311LJ2lsu7vUVs+lh5fmTJG9zObcAxJpiTqE5R7fGEURP0r+DSd1PD4NmSjX3r8Nsw1dtaXi1V6fL7PzY/2eUNfsCz2by9ye7LlE+7qGku0pviz75hHU2yM33gPRDlR/xH+CZSfoqc8/hgGoD2zXzXOz3lhFxsRTgaffe5ZBkSV84ODw38yrISYXmQJVd01thbuMtmweOsJefs9P2piZh0My38KXxfwESymAH7n8YfQQ9LX7Vdkxw9jRmaJGvRjYCGrG0DOqy1/2/E56pURwQN1vfRJZmNgPeC/s3r8xhgY+Vv4c7kqAP98wCcBfwldN3nFau2Oz0LXTbm0lXAKLGhzNqSFLb/z+JSbl1apoPwNET6JMrHPJQpIFo/fmdinF/8q/rRx47Z6iPqI20UenO6jYQ1uxsLNejUhOibvcJvZuLOEoyF3OAO5ace3bla6dTRbYzu+NElWwJe3e/zWzh7yf+gUz4MVfPuR8ez8DuDPQWFnJAHf/YvfcdFD605kIQnLV678Gzx+A5qG3OOHHT4WhlJH+Dd7/MENov4h/F6W8NmKphQfC+pM/qEZpoWk+yTtv/R9yOILV2O3eD2RhvICBZxIhE8jFsYfBXy0xQvctwA+6td/Cp+KEj5R6Jw+xIJYIrwpwBf2k59/mC6QxWNRZ/UoXi0GhQmvEQN+slxL+Z2An8zmqxsBHwD+5lTnzYio2wv4RsGy8iW24jGPf3vAb5ERWe0LRiSIh4WFFX4PJOEB/yHsvphe8gYBjWHxZ/q9yKaztcVv0GX4e9eUQ2oHoYciPvkS1l7BXZ5Rz/M3UzUWQRLVQeC4xAv90wG/R9Y1mhrL1vflbW7xJV/+QSfrLlq66b+/vv+gBjUY7zniP2xOG+Sn56wQv/+3ZOef2b4azmDub45O/vBnkYTBtMcXJg01+NkWntttsen6B7iLsXf47G/hTwqYuiXBx8IpNX2Rp7tLRgek0ZDhU7c9vUcU8O+CGjsjleIHl9ox8dDhjJ4L8TR1biXfiLlMSP/9I9znqNPvv0rw9+6NWSrA36MeecD3UU8L+EmNrUaFMkoLd8vS+75SpjEofplI9+M224Z7tzzZ4v/mIV4dVTZTMT5vnKBtQ0WKz+yDwAD4LpY3YuX4PcTEKSVRyBQ8eleg0stO8IX645BddjvOJBS6/W+v8GIVSU5ljP/iLb57e8mWoOOaMfjkiI+UxV+O+IxbfH7Ax9oCLccgdLJPWb4Nw4s5gSZdiXpDeV8bfCAxPnnOTOA8bnZ22O+XNBHhhB/xF0swA34sMi7ho4vV7LkQhdlSmsKJZh3i67+ywntT5TADeK0EXyirgeyzFWf4WNXwH6rhY21ypPnRfr9hfQxKP2SvqOTdLl/2ikoFhnQtPi/g88g48RsJ/uzOzKARqxjffaaohM+sOICfNDLlJfzJjhzlEZ+uJr/2iI82Dpp0Pf6tpdaHdsv0CEtDIdCIugP+ZGyRFfCpND5RFfAngRjqAD85H6pYju+PtnZ4LeBPChEx/TV8un1T+JbFs7xkTpziXR6/QTrDZ+brMz+eTsfaBMOqcMcJ0+ghWCqTsVwcyy3Bh+sux76E35uzA9tfw9+2nwvK38QO+AaVzwNhYdFPGT5Z0UJD+bej2JIZ2gJ+nGTjp14X8PGm6QdrYvsw1P5le62Ab1aRph+utH3YVqPq+FQZ56DysSDh1DrADN+euvy0hG9OXa7hXGv+Vk8J+OkDPRfwmSmlKeBjW/xfwp+27btLfV8bs8HXnA+GqDt8NAE+UCJREJkYyNtB5BSGB7+SPRB7jQ0Zpb6plNcExV+Jv61w/CDDxyZDDvjRI+pOY/U8w0dblNddacXoSk97Bu3DIlOl8DmvZHlwUrCt6Zp+H0wP3b6pm/PvWzcVgy9Wi5fcLjpykV43dPWmnzm1soNlwe9K+OlM1ly7OqfJdFmW86rfUYBu79fbSvhU3EG16aXuWvKQYGRa+phNF1hA+4rMbe0KMMJTIWpVSXi9Kq/EhwjyLnK5q6T8TN1/lozk+ESaUaV62DtGVcUXNfzba/g0xb+9VpWkWpWPFquy7vmsjW6AH2u4cUr0XY4eXfJ3Q3+/CR9lY5WVX6v+W6pXYYka/gB5yZohjdWqvAb/ZCWeZAm/NVuQyQccPZzKe1Zs2/Yom8h69dfw59r15azmR4io4S81fHbVsN5KzB4t4Y9mYw35DiExoLx30/ukCJXV6kc1Q5Y1/O4/xsfK4hNVCnoXrG0DY57iky10b5OYRE2TG1QxZCxq+G0Nn/Iavqrhd1fg27aD3ispACurpSvgQ/eieVAEXsNva/iE1/DHGj5DFXxcVb7xGnzhJD7lv6bcWLV0+EEOeMrhdtBa+UNN+Smq4S81/K6GT0St+OXKA0uYG/zTYbaHCduUy53oiI94sIMq/lzDb6r4qoY/1vAprxWvrsDvPD6MOUGpJoTFbQgtjx7xGYbAlNc8v6rdetrV8LGs4esafl+rfSKvXMshJhf8dd4lEOPzbi/jNxgmPjP8uSZyAyLX8Imo4asaflfFF9d0+x6fPf/RYRpAI4KK+FAoFJOb3G2HQ7QszKvSor1CB5Tj31JrfcxrrX/Xda2/GIEs/qsHfImoxRdH/LaOfwqjPcZT/HBgAWeUKpjNUlxnvD3kmlk8gULyvK67vkD54Sd994HsTTLvbhzdZDifFgamjD8c8S/BBqjoZTK6CDagyVpYUhCBN6vKIbOXAE3BxLO85FUH2LHc8d8/Z/jPCXvJvsOfKvjLMYb5IJSP5TlugftkSDqyuDCqgwvo0FioyiHwZlVJD5pEdCj+oSvxbzTJvl27NB/MPf4TBl+U8ecDPnlRhujnexUbzbyG6Kd7iMZNOYTp3wYnHcl3oEkp/h0yaFKG/yZU5ZV3FNxsPvyqnk2fEG5EZb9DGHxVxlfHsRiBpdpnRBs7pRNsaluSyzdh0Z/STcYGKFwp1pB07BN18MCabHHxfeDq0Vlei4/zQ/o3Ee7fC/CDwddFfCwP+A0VIa6deBOxCA03jqnkutI+eHPy8nMqku4dtZdC5Dm5s+/Z4BpPLFYYxsLxZfZcMoV7FgV8HqaPPkgxbiTI4BOBzYHU+y5Zx1fFHxn0TF2y/vichM1+IsZfGGz3+hjNcRK1txFWWyyCegiF3aH9JiLBqNg7WfrOppNJUF5fykKH4JX62IkY/OFcxCfiYPuLUwx2eD8HI9zXWH5Xr+qCRuE1WcxDMqjoD6qLXVYb8LtnSaxJhO/Fkw/EkgxS1R/i8xI+1vQdgz+lTydInrW+aqF+mhi/IzywYIFEzuK4VYKPZRDyLFiMP4Zum+lYgpHyEMtv8UszNwFdW8YIl80cH1365w0+S9v4DN0vyV6eOzgxDvgDhQpP8IkYIVp+FN0e15gImnTmNHZZsC+KKSQPhjS6magWBJYIH7WfQTqqiqve540K8zStnE2E5GRLnUm0ZYfG+PNNUYkymd8bIFydAz5ocu9WWmmstHMY1VAR46sG4iWN2njpuzSjB/hYFx/1F3swIo3G8c8yqDhJKpXFG7ZolD+WTeQ1ZDK/53f4HfAXysOOpTHGZz5/4dRJRqVEt/gpwKdup0wdf0Br8RHVFj8NrshnGgXBwC7grAGWsGM1OWuAvKJjnidxLT3E+IpCU7YxfueIGXfpZFRKC6HvDPg9R2CmZfxT5VEvjWLqBP9TDYLR9MzXo04MRwTGR31VLA6f8CjJDL5mSCa3GTRli1hUCoabrAjHMipldFbh8Md0y9vF5FV97VcFf7L46TqPWEGw9BJdh0+5kyyerHP4yuHTOImC8gZ010FhlGvwLkqCYVMXESQ2pAFqfwGhtXfYuI7fVfAfkAjLVDcYP3MYXq1xj+TwmfeDChrM4WPp8KPCvOduvRhzVEoDSbqoebBy+KNDpYD/kMGHIzM6nfnpOX21gn8zYjk+jNSwSPHNSVTI9TRFDebwO78HbIUGc/hEOPyJQ405/MHjy6iUDpI0US0TSUS0Kbrn0Qh5gdofiErDGybY7RV8VMV/QhoJxvQaT1skle6vjUODOfzRifn8Bg1m8IMg89lTQsc1O3wio1I6SNIYlpDE4SuHH43VtMPvHD4TKRqVzZB27lfgzxJRnuKfEIt8fhR0d8jhLx7/dQ5qcUtUyPykimpMglUMVEeltJCkITqyCsJDEizOkVX4S789vsyGKKrN8Jc4lqjiM5Tia/fUa13/mQCJHb7ytk84QFr87vDmwX4fBXl8KEg7/M7jr5FVEG6TeHwOVuHyXTx+vjFID/Zx4WXBvIJvpzr7FB8r93TyaM9JeGDxsfT4WARFdvjjjj9ENSah8gfoq4kPW0YvzgU29Tp8yr3ti2hj2Qy1PwSF2aH1XTm+T4oP+LcE+WYj/CSSWYLOigFDWVgym6Epo4HdGi5QR2lwh7XDZ3s7NQgyayFJFxnn6vCZFwbLKLqZofaX0GYyoHwmExdO4GLBGv5DMzqlATMVTjCd4YdTuJRnL5MiyuMreJkUPJEGD/AhsxZk70A+ohx+u7eFArVwtc/TlyOCDn66AQZEXEa2Or4dDvQ6mWdtveTQve/qcJc1zgyfCedmiQR8eCLBKgbwxpMft4r8JVtUOvUafOngR1anK3RXsSaotkd55wL4cWA01vHnkar07nzmt/7IDB9rL5SPUJqAP3mhqNibo41WfCSoxV2A/6zBD2K10IZMOHy14w+RIS2xf6XZnFb/7g+ADy7IpmIVfDVZzqh37Rw+E3vuuwUpj3/K8S8en/GAD5AwYQot5uq7AacwAv7E7WefhAI+Va74MXs1Jg329PLLPpOghHBk48xLnp9I169Pkck4/J7v+I9Gs++tyQ2umYDZd8KDWhAeXJ+/Y4SIA75y6N0B/yGHTsQBXzj0JcUHhWKvbzEjjl0221QJnwq2hU4eDjeBYIju+GfPTGQmMpMe/4QykbFOVU+iJhYJmnIB/NUIDpEsdOs9dz9XOxxNUAxiii+ihP22lvAZJxf3f+j2Hfoa8DcO96438NNhdzoTd4VhFbTxrmgwMkJVyvCJcUfok6ggrM1EhSQd4Bvd6qDbFYhmdky3Tab4YIH925cS/nQ4yUqEfUoCPtoE6BLlIcm8O51xV0YZ8p7B8RuRTyh3CpMrk8gM32WiTZIcf3WulPEMHyKp7UtVwCfa1t2zJfwTQEfR8U3Jm2ceSV+VeQpNybKRAvfyBLPrvf7qINAA5VoCDjeAg1oYewEHM0dqwWAWnu8MMMzbuM4WechdCPVOBfsUHzvjBCzoqyy+Ch0BkbE/wSqwJFMoY/hzCLrUuvrEMoi8xKf1ZJBJGmyosTGU2QaTIj54PoW8Hsrxb0Zjhk8n1W9OJpZOWhKvajn+Q856+8gTq7j1qQz4a9r6a8BPX5kbaoNCViLRJCyCSd2eatIA8YfTjcjBrMc9Vm2G3+x3fs4Q+MAsNcT6EFlrb+E8YCUrUwI6xHTyXBMVnELqZgJLkx0ZDCxEpPsPVNCkhcLqXXJpOkPf6ePG+i6z/Q52h5ME//mf3LEhwE9MDAjmpAAWBCPpujiGK08fpTpmaYNQTZqEIdCkaU3yAk2i0Jk5E+bBI6sjfpPhj0dP6OcqDB+FOpdxF9BEs4YqKaCJLqBOfCkWMIXAoKRkdpuhDcX4YI+yl6jkYFBL1rKDIXyP4+YDPhiYruFzk8+kDvi9G23R+JTrbSXjImKp7MFfWG3vauotOgjYpPsEVitCeSIdxdweyvv9029o90nupDsUNAAAAABJRU5ErkJggg==);
+	background-repeat: no-repeat;
+	background-size: 1000%;
+	position: fixed;
+	background-position-x: -100%;
+	right: 0;
+	bottom: 0;
+	/*Aspect*/
+	width: calc(40vh * 1.103260869);
+	height: 40vh;
+	image-rendering: pixelated;
+
+	animation: slideshow 0.9s steps(9) 0.3s 1 normal forwards;
+}
+.dark #sheepy {
+	mix-blend-mode: screen;
+	filter: invert(0%) !important;
+}
+@keyframes slideshow {
+	from {background-position-x: 0%;}
+	to {
+		background-position-x: 100%;
+	}
+}
+#made-in-message {
+	user-select: none;
+	align-self: center;
+	font-size: 2vw;
+	display: flex;
+	align-items: center;
+}
+#godot-logo {
+	fill: #478cbf;
+	display: inline;
+	width: 4vw;
+	height: auto;
+}
+#heart {
+	fill: #ee4646;
+	display: inline;
+	width: 3vw;
+	height: auto;
+}
+
+
+/* https://github.com/animate-css/animate.css/blob/main/animate.css */
+/* no -webkit prefix, as godot requires a modern browser anyway. */
+@keyframes bounce {
+	from,
+	20%,
+	53%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		transform: translate3d(0, 0, 0);
+	}
+
+	40%,
+	43% {
+		animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		transform: translate3d(0, -30px, 0) scaleY(1.1);
+	}
+
+	70% {
+		animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		transform: translate3d(0, -15px, 0) scaleY(1.05);
+	}
+
+	80% {
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		transform: translate3d(0, 0, 0) scaleY(0.95);
+	}
+
+	90% {
+		transform: translate3d(0, -4px, 0) scaleY(1.02);
+	}
+}
+.animate__bounce {
+	animation: bounce 1.5s linear 0s infinite normal both;
+	transform-origin: center bottom;
+}
+.animate__bounce:nth-of-type(1) {
+	animation-delay: 0s;
+}
+.animate__bounce:nth-of-type(2) {
+	animation-delay: 100ms;
+}
+.animate__bounce:nth-of-type(3) {
+	animation-delay: 200ms;
+}
+.animate__bounce:nth-of-type(4) {
+	animation-delay: 300ms;
+}
+.animate__bounce:nth-of-type(5) {
+	animation-delay: 400ms;
+}
+.animate__bounce:nth-of-type(6) {
+	animation-delay: 500ms;
+}
+.animate__bounce:nth-of-type(7) {
+	animation-delay: 600ms;
+}
+.animate__bounce:nth-of-type(8) {
+	animation-delay: 700ms;
+}
+.animate__bounce:nth-of-type(9) {
+	animation-delay: 800ms;
+}
+.animate__bounce:nth-of-type(10) {
+	animation-delay: 900ms;
+}
+.animate__bounce:nth-of-type(11) {
+	animation-delay: 1000ms;
+}
+.animate__bounce:nth-of-type(12) {
+	animation-delay: 1100ms;
+}
+		</style>
+		$GODOT_HEAD_INCLUDE
+	</head>
+	<body>
+		<canvas id="canvas">
+			HTML5 canvas appears to be unsupported in the current browser.<br >
+			Please try updating or use a different browser.
+		</canvas>
+		<div id="fuzz-load">
+			<div id="fuzz-center">
+				<div id="sheepy" title="Baa.."></div>
+				<div id="fuzz-text">
+					<span id="underline">Fuzzyzilla</span>
+					<span class="fuzz-text-pad"></span>
+					<span class="animate__bounce">F</span>
+					<span class="animate__bounce">u</span>
+					<span class="animate__bounce">z</span>
+					<span class="animate__bounce">z</span>
+					<span class="animate__bounce">y</span>
+					<span class="animate__bounce">z</span>
+					<span class="animate__bounce">i</span>
+					<span class="animate__bounce">l</span>
+					<span class="animate__bounce">l</span>
+					<span class="animate__bounce">a</span>
+					<span class="fuzz-text-pad"></span>
+					<div id="fuzz-progress" class="scroll-anim"></div>
+				</div>
+				<p id="fuzz-status">Loading...</p>
+				<div id="made-in-message">
+					<p>Made in</p>
+					<a href="https://godotengine.org/" target="_blank">
+						<svg version="1.1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" id="godot-logo"><title>Godot</title><g transform="matrix(.10073 0 0 .10073 12.426 2.2564)" stroke-width="9.9275"><path transform="matrix(4.1626 0 0 -4.1626 104.7 525.91)" d="m75.172 84.205c-10.184-2.264-20.259-5.4145-29.704-10.168 0.216-8.34 0.75624-16.333 1.8492-24.45-3.668-2.35-7.5204-4.3665-10.946-7.1175-3.481-2.678-7.0398-5.2385-10.192-8.3705-6.297 4.165-12.959 8.0783-19.825 11.533-7.401-7.965-14.321-16.563-19.974-26.183 4.4426-6.9737 9.2071-13.981 13.62-19.447v-59.045c0.108-1e-3 0.2144-4e-3 0.3214-0.01397l36.198-3.4889c1.896-0.183 3.3802-1.71 3.5122-3.61l1.1179-15.977 31.572-2.2545 2.1753 14.747c0.282 1.912 1.9229 3.3305 3.8568 3.3305h38.187c1.933 0 3.5748-1.4185 3.8568-3.3305l2.1753-14.747 31.572 2.2545 1.1179 15.977c0.133 1.9 1.6162 3.426 3.5122 3.61l36.184 3.4889c0.107 0.01 0.21341 0.01297 0.32141 0.01397v4.7139l0.014 0.0047v54.327c5.0969 6.4164 9.9224 13.493 13.62 19.447-5.651 9.62-12.573 18.218-19.974 26.183-6.864-3.455-13.532-7.3683-19.829-11.533-3.151 3.132-6.7012 5.6925-10.187 8.3705-3.425 2.751-7.2807 4.7675-10.942 7.1175 1.09 8.117 1.6276 16.11 1.8446 24.45-9.446 4.754-19.52 7.9045-29.709 10.168-4.068-6.837-7.7902-14.24-11.03-21.478-3.842 0.642-7.7009 0.88095-11.566 0.92695v0.0047c-0.027 0-0.05153-0.0047-0.07453-0.0047-0.024 0-0.05053 0.0047-0.07453 0.0047v-0.0047c-3.872-0.046-7.7276-0.28495-11.571-0.92695-3.238 7.238-6.9562 14.641-11.03 21.478zm-28.633-86.369c12.048 0 21.814-9.7603 21.814-21.804 0-12.052-9.7656-21.814-21.814-21.814-12.042 0-21.814 9.7616-21.814 21.814 0 12.044 9.7716 21.804 21.814 21.804zm102.62 0c12.041 0 21.809-9.7603 21.809-21.804 0-12.052-9.7679-21.814-21.809-21.814-12.05 0-21.814 9.7616-21.814 21.814 0 12.044 9.7636 21.804 21.814 21.804zm-100.54-8.6173c-7.996 0-14.477-6.4832-14.477-14.477s6.4812-14.477 14.477-14.477c8 0 14.482 6.4832 14.482 14.477s-6.4818 14.477-14.482 14.477zm98.443 0c-7.994 0-14.468-6.4832-14.468-14.477s6.4738-14.477 14.468-14.477c8.002 0 14.482 6.4832 14.482 14.477s-6.4798 14.477-14.482 14.477zm-49.217-4.141c3.878 0 7.0243-2.8615 7.0243-6.3815v-20.081c0-3.523-3.1463-6.3815-7.0243-6.3815-3.878 0-7.0243 2.8585-7.0243 6.3815v20.081c0 3.52 3.1463 6.3815 7.0243 6.3815zm-97.907-51.928c0.015-3.498 0.060554-7.3327 0.060554-8.0957 0-34.374 43.605-50.895 97.781-51.085h0.13042c54.176 0.19 97.767 16.711 97.767 51.085 0 0.777 0.0492 4.5957 0.0652 8.0957l-32.536-3.1395-1.1226-16.061c-0.135-1.936-1.674-3.4803-3.61-3.6193l-38.554-2.7482c-0.094-7e-3 -0.18648-0.0093-0.27948-0.0093-1.916 0-3.5692 1.4065-3.8522 3.3305l-2.2126 14.99h-31.46l-2.2079-14.99c-0.297-2.018-2.1043-3.4702-4.1363-3.3212l-38.554 2.7482c-1.936 0.139-3.475 1.6833-3.61 3.6193l-1.1226 16.061z"/></g></svg>
+					</a>
+					<p>with</p>
+					<svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="heart"><title>Love</title>
+						<path d="M19.3 5.71002C18.841 5.24601 18.2943 4.87797 17.6917 4.62731C17.0891 4.37666 16.4426 4.2484 15.79 4.25002C15.1373 4.2484 14.4909 4.37666 13.8883 4.62731C13.2857 4.87797 12.739 5.24601 12.28 5.71002L12 6.00002L11.72 5.72001C10.7917 4.79182 9.53273 4.27037 8.22 4.27037C6.90726 4.27037 5.64829 4.79182 4.72 5.72001C3.80386 6.65466 3.29071 7.91125 3.29071 9.22002C3.29071 10.5288 3.80386 11.7854 4.72 12.72L11.49 19.51C11.6306 19.6505 11.8212 19.7294 12.02 19.7294C12.2187 19.7294 12.4094 19.6505 12.55 19.51L19.32 12.72C20.2365 11.7823 20.7479 10.5221 20.7442 9.21092C20.7405 7.89973 20.2218 6.64248 19.3 5.71002Z"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<script type='text/javascript' src="index.js"></script>
+		<script type='text/javascript'>
+// Bug in firefox - animations depending on viewport size do not update on resize unless anim is restarted
+window.addEventListener("resize", () => {
+	let scroll = document.getElementById("fuzz-progress");
+	if (scroll !== null) {
+		scroll.classList.remove("scroll-anim");
+		scroll.offsetHeight; // force reflow?? why does this work??? that is cursed?????
+		scroll.classList.add("scroll-anim");
+	}
+});
+function getPrideClass() {
+	let date = new Date();
+	let day = date.getDate();
+	let month = date.getMonth();
+
+	// Adapted from https://gitlab.gnome.org/World/warp/-/blob/main/src/ui/pride.rs
+
+	var aro = false;
+	{
+		const feb_14 = new Date(date.getFullYear(), 2, 14);
+		const feb_14_weekday = feb_14.getDay();
+		const start = 14 + 7 - feb_14_weekday;
+		const end = start + 6;
+		aro = (month == 2 && day >= start && day <= end);
+	}
+
+	var ace = false;
+	{
+		const end_of_oct = new Date(date.getFullYear, 10, 31);
+		const end_of_oct_weekday = end_of_oct.getDay();
+		var start;
+		if (end_of_oct_weekday == 6) {
+			start = 31-7;
+		} else {
+			start = 31 - end_of_oct_weekday - 7;
+		}
+		const end = start + 6;
+
+		ace = (month == 10 && day >= start && day <= end);
+	}
+	var nb = false;
+	{
+		const july_14 = new Date(date.getFullYear(), 7, 14);
+		const july_14_weekday = july_14.getDay();
+		const start = 14 - july_14_weekday;
+		const end = start + 7;
+		nb = (month == 7 && day >= start && day <= end);
+	}
+
+	if((month == 10 && day == 26) || (month == 11 && day == 8)) return "flag-intersex";
+	else if((month == 10 && day == 8)
+			|| (month == 4 && day >= 26)
+			|| (month == 5 && day <= 2)) return "flag-lesbian";
+	else if(month == 12 && day == 1) return "flag-aids";
+	else if(month == 6 && day == 18) return "flag-autism";
+	else if(month == 5 && day == 24) return "flag-pan";
+	else if((month == 11 && day >= 13 && day <= 19) // Awareness week
+			|| (month == 11 && day == 20) // TDOR
+			|| (month == 3 && day == 31) // TDOV
+	) return "flag-trans";
+	else if(aro) return "flag-aro";
+	else if(ace) return "flag-ace";
+	else if(month == 9 && day >= 16 && day <= 23) return "flag-bi";
+	else if(nb) return "flag-non-binary";
+	else if(month == 6) return "flag-pride";
+	else if(month == 7) return "flag-disability";
+	else if(month == 2 || month == 10) return "flag-black-history";
+
+	return "flag-none";
+}
+addEventListener("DOMContentLoaded", () => {
+	let scroll = document.getElementById("fuzz-progress");
+	if (scroll !== null) {
+		scroll.classList.add(getPrideClass());
+	}
+});
+		</script>
+		<script type='text/javascript'>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":4800688,"index.wasm":12665632},"gdnativeLibs":[]};
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const loadingScreen = document.getElementById('fuzz-load');
+	const statusProgress = document.getElementById('fuzz-progress');
+	const statusNotice = document.getElementById('fuzz-status');
+
+
+	var cur_status = "none";
+
+	const kill = () => {
+		loadingScreen.remove();
+	}
+	const fail = (err) => {
+		cur_status = "err";
+		statusNotice.textContent = err;
+		statusNotice.classList.add("fuzz-fail");
+	}
+	const set_status = (status) => {
+		if (cur_status !== "err") {
+			statusNotice.textContent = status;
+		}
+	}
+
+	/*https://stackoverflow.com/questions/10420352/converting-file-size-in-bytes-to-human-readable-string*/
+	const humanFileSize = (bytes, si=false, dp=1) => {
+		const thresh = si ? 1000 : 1024;
+
+		if (Math.abs(bytes) < thresh) {
+			return bytes + ' B';
+		}
+
+		//Hopefully our game won't be measured in Yottabytes.
+		const units = si 
+			? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'] 
+			: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+		let u = -1;
+		const r = 10**dp;
+
+		do {
+			bytes /= thresh;
+			++u;
+		} while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1);
+
+
+		return bytes.toFixed(dp) + ' ' + units[u];
+	}
+
+	if (!Engine.isWebGLAvailable()) {
+		const missingMsg = 'WebGL is required to play this game. Sorry!';
+		fail(missingMsg);
+	} else {
+		engine.startGame({
+			'onProgress': function (current, total) {
+				if (total > 0) {
+					//Known download size
+					statusProgress.style.left = `${(current / total) * 100 - 100}%`;
+					set_status(`${humanFileSize(current, true)} of ${humanFileSize(total, true)}`);
+					if (current === total) {
+						set_status("Initializing...");
+					}
+				} else {
+					set_status(`Now loading... ${humanFileSize(current, true)}`);
+					statusProgress.style.left = "0%";
+				}
+			},
+		}).then(kill, fail);
+	}
+}());
+		</script>
+	</body>
+</html>

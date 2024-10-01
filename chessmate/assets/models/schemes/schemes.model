@@ -1,0 +1,31 @@
+{
+	"assets"		:	{
+							"secret-scheme"	:	{
+													"type"			:	"SchemeView",
+													"file"			:	"scheme.json",
+													"description"	:	"Park Scheme",
+													"set"			:	"iconic-set",
+													"board"			:	"modern-board",
+													"location"		:	"secret-scene",
+													"thumbnail"		:	"park.jpg"
+												},
+							"halloween-scheme":	{
+													"type"			:	"SchemeView",
+													"file"			:	"scheme.json",
+													"description"	:	"Halloween Scheme",
+													"set"			:	"stone-set",
+													"board"			:	"classic-board",
+													"location"		:	"halloween-scene",
+													"thumbnail"		:	"scheme.png"
+												},
+							"picnic-scheme"	:	{
+													"type"			:	"SchemeView",
+													"file"			:	"scheme.json",
+													"description"	:	"Picnic Scheme",
+													"set"			:	"iconic-set",
+													"board"			:	"classic-board",
+													"location"		:	"picnic-scene",
+													"thumbnail"		:	"picnic.jpg"
+												}
+						}
+}

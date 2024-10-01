@@ -1,0 +1,139 @@
+{
+	"type"			:	"ChessSet",
+
+	"side"			:	"FrontSide",
+
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"flatShading"	:	true,
+
+	"style"			:	"normal",
+	
+	"styles"		:	{
+							"normal"		:	{
+													"castShadow"	:	true,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"type"			:	"StandardMaterial",	
+																				"transparent"	:	true,
+																				"opacity"		:	1,
+
+																				"metalness"		:	0.5,
+																				"roughness"		:	0.5,
+																				"envMap"		:	{
+																										"type"		:	"Texture",
+																										"mapping"	:	"SphericalReflectionMapping",
+																										"file"		:	"/assets/textures/spherical/chrome.jpg"
+																									}	,
+																				"envMapIntensity":	2,
+																				"depthTest"		:	true
+																			}
+																		}
+												},
+							"faded"			:	{
+													"castShadow"	:	false,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"opacity"		:	0.5,
+																				"depthTest"		:	false
+																			}
+																		}
+												},
+							"white"			:	{
+													"flatShading"	:	false,
+													"materials"		:	{
+																			"*":
+																			{
+																				"type"			:	"StandardMaterial",	
+																				"color"		:	"#B89A77",
+
+																				"metalness"		:	0.3,
+																				"roughness"		:	0.5,
+																				"envMap"		:	{
+																										"type"		:	"Texture",
+																										"mapping"	:	"SphericalReflectionMapping",
+																										"file"		:	"/assets/textures/spherical/chrome.jpg"
+																									}	,
+																				"envMapIntensity":	2
+																			}
+																		}
+												},
+							"black"			:	{
+													"flatShading"	:	false,
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"			:	"#754C28",
+																				"type"			:	"StandardMaterial",	
+																				"metalness"		:	0.3,
+																				"roughness"		:	0.5
+																			}
+																		}
+												}
+						},
+	
+	"assets"		:	{
+							"classic-king"	:	{
+													"file"			:	"K.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"classic-queen"	:	{
+													"file"			:	"Q.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"classic-bishop":	{
+													"file"			:	"B.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"flatShading"	:	false,
+													"scale"			:	0.9
+												},
+							"classic-knight":	{
+													"file"			:	"N.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"rotation"		:	[0,90,0],
+													"scale"			:	0.95
+												},
+							"classic-rook"	:	{
+													"file"			:	"R.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.95
+												},
+							"classic-pawn"	:	{
+													"file"			:	"P.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"flatShading"	:	false,
+													"scale"			:	0.95
+												},
+							"sphericaltex"	:	{
+													"type"			:	"Textures",
+													"folder"		:	"../../../textures/spherical",
+													"format"		:	"jpg",
+													"files"			:	"chrome"
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"classic-king",
+													"queen"			:	"classic-queen",
+													"knight"		:	"classic-knight",
+													"bishop"		:	"classic-bishop",
+													"rook"			:	"classic-rook",
+													"pawn"			:	"classic-pawn"
+												},
+							"black"			:	{
+													"king"			:	"classic-king",
+													"queen"			:	"classic-queen",
+													"knight"		:	"classic-knight",
+													"bishop"		:	"classic-bishop",
+													"rook"			:	"classic-rook",
+													"pawn"			:	"classic-pawn"
+												}
+						}
+						
+}

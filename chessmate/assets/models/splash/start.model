@@ -1,0 +1,113 @@
+{
+	"type"			:	"StartScreen",
+	"scale"			:	1,
+	"camera"		:	{
+							"position" 		: 	[0,0,1.4],
+							"target" 		: 	[0,0,0]
+						},
+	"effects"		:	{
+							"blur"			:	{
+													"type"				:	"GaussianBlurEffect",
+													"amount"			:	0.001,
+													"enabled"			:	false
+												},
+							"shift"			:	{
+													"type"				:	"RGBShiftEffect",
+													"amount"			:	0.00425,
+													"angle"				:	90,
+													"enabled"			:	false
+												},
+							"film"			:	{
+													"type"				:	"FilmEffect",
+													"noiseIntensity"	:	0.7,
+													"scanlinesIntensity":	0.6,
+													"scanlinesCount"	:	1200,
+													"enabled"			:	false
+												}
+						},
+	"assets"		:	{
+							"splash_button"	:	{
+														"type"			:	"PushButton",
+														"file"			:	"/assets/fonts/msdf/roboto/Roboto-Regular.msdf",
+														"text"			:	" ",
+														"scale"			:	1.3,
+														"rotation"		:	[0,0,0],
+														"style"			:	"init",
+														"styles"		:	{
+																				"init"				:	{
+																											"color"			:	"#f44"
+																										},
+																				"hover"				:	{
+																											"color"			:	"#3a88b5",
+																											"materials"		:	{ 
+																																	"body"	:	
+																																	{	
+																																		"color"			:	"#ccc"
+																																	}
+																																}
+																										},
+																				"enter"				:	{	
+																											"audio"			:	{"file":"/assets/audio/click.ogg", "loop":"Once", "playbackRate":1.7, "volume":0.02, "global":true}
+																										},
+																				"leave"				:	{	
+																											"color"			:	"#f44"
+																										},
+																				"pressed"			:	{	
+																											"color"			:	"#811",
+																											"audio"			:	{"file":"/assets/audio/click.ogg", "loop":"Once", "playbackRate":2, "volume":0.1, "global":true}
+																										},
+																				"release"			:	{	
+																											"color"			:	"#f44"
+																										},
+																					"reveal"		:	{
+																											"opacity"		:	1
+																										},
+																					"fadeIn"		:	{
+																											"opacity"		:	{"start":0,"end":1, "duration":0.5, "loop":"Once"}
+																										},
+																					"fadeOut"		:	{
+																											"opacity"		:	{"start":1,"end":0, "duration":0.5, "loop":"Once"}
+																										}
+																			}
+													}
+						},
+	"children"		:	{
+							"ambient"		:	{
+													"type"			:	"AmbientLight",
+													"color"			:	"#ccc",
+													"intensity"		:	1
+												},
+							"!spotlight"		:	{
+													"type"			:	"SpotLight",
+													"color"			:	"#666",
+													"position"		:	[0,50,0],
+													"target"		:	[-1,-1,-1],
+													"intensity"		:	1,
+													"distance"		:	200,
+													"decay"			:	0,
+													"angle"			:	50,
+													"penumbra"		:	0.1,
+													"castShadow"	:	true,
+													"shadow"		:	{
+																			"radius"		:	0.4,
+																			"bias"			:	0.00000000001,
+																			"mapSize" 		:	{
+																									"width"  	: 	1024,
+																									"height" 	: 	1024
+																								},
+																			"camera"		:	{
+																									"near" 		:	1,
+																									"far" 		:	120,
+																									"fov"		:	10
+																								}
+																		}
+												},
+							"btnPlay"		:	{
+													"file"			:	"asset:splash_button",
+													"text"			:	"Resume",
+													"position"		:	[0,0,0],
+													"rotation"		:	[0,0,0],
+													"opacity"		:	0
+												}
+						}						
+}

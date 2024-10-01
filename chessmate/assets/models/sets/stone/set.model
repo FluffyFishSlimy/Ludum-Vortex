@@ -1,0 +1,80 @@
+{
+	"type"			:	"ChessSet",
+	"description"	:	"Stone chess set",
+	"credit"		:	"Itizso",
+
+	"style"			:	"normal",
+	"side"			:	"FrontSide",
+
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"flatShading"	:	true,
+
+	"styles"		:	{
+							"normal"		:	{	"materials"	: { "*" : { "type"	: "PhongMaterial", "specular":"#222" , "transparent":true, "opacity":1, "depthTest"		:	true	} }, "castShadow":true },
+							"white"			:	{	"materials"	: { "*" : { "color"	: "#fff"								} } },
+							"black"			:	{	"materials"	: { "*" : { "color"	: "#888"								} } },
+							"faded"			:	{	"materials"	: { "*" : { "transparent": true, "opacity":0.4, "alphaTest":0.4, "specular":"#fff", "depthTest"		:	false		} }, "castShadow":false }
+						},
+	
+	
+	"assets"		:	{
+							"stone-king"	:	{
+													"file"			:	"king.json",
+													"scale"			:	1.43
+												},
+							"stone-queen"	:	{
+													"file"			:	"queen.json",
+													"scale"			:	1.4
+												},
+							"stone-bishop"	:	{
+													"file"			:	"bishop.json",
+													"styles"		:	{
+																			"white"			:	{	"materials"	: { "*" : { "color"	: "#ddd"								} } },
+																			"black"			:	{	"materials"	: { "*" : { "color"	: "#777"								} } }
+																		},
+													"scale"			:	1.36
+												},
+							"stone-knight"	:	{
+													"file"			:	"knight.json",
+													"scale"			:	1.4
+												},
+							"stone-rook"	:	{
+													"file"			:	"rook.json",
+													"styles"		:	{
+																			"white"			:	{	"materials"	: { "*" : { "color"	: "#ddd"								} } },
+																			"black"			:	{	"materials"	: { "*" : { "color"	: "#777"								} } }
+																		},
+													"scale"			:	1.4
+												},
+							"stone-pawn"	:	{
+													"file"			:	"pawn.json",
+													"styles"		:	{
+																			"white"			:	{	"materials"	: { "*" : { "color"	: "#ddd"								} } },
+																			"black"			:	{	"materials"	: { "*" : { "color"	: "#666"								} } }
+																		},
+													"scale"			:	1.4
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"stone-king",
+													"queen"			:	"stone-queen",
+													"knight"		:	"stone-knight",
+													"bishop"		:	"stone-bishop",
+													"rook"			:	"stone-rook",
+													"pawn"			:	"stone-pawn"
+												},
+							"black"			:	{
+													"king"			:	"stone-king",
+													"queen"			:	"stone-queen",
+													"knight"		:	"stone-knight",
+													"bishop"		:	"stone-bishop",
+													"rook"			:	"stone-rook",
+													"pawn"			:	"stone-pawn"
+												}
+						}
+						
+}

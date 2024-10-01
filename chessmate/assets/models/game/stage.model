@@ -1,0 +1,14 @@
+{
+	"type"			:	"StageChessView",
+	"scale"			:	1.4,
+	"receiveShadow"	:	true,
+	"castShadow"	:	true,
+	"!background"	:	"#669",
+	"effects"		:	{
+							"blur"			:	{
+													"type"			:	"GaussianBlurEffect",
+													"amount"		:	0.001,
+													"enabled"		:	false
+												}
+						}
+}

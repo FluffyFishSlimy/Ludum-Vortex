@@ -1,0 +1,52 @@
+{
+	"camera"		:	{	
+							"position" 		: 	[0,2,8],
+							"target" 		: 	[0,2,0]
+						},
+						
+	"effects"		:	{
+							"blur"			:	{
+													"type"			:	"GaussianBlurEffect",
+													"amount"		:	0.002,
+													"enabled"		:	false
+												}
+						},
+						
+	"position"		:	[-3.6,3.4,0],
+	"rotation"		:	[0,42,0],
+	
+	"scale"			:	0.5,
+	"children"		:	{
+							"ambient"		:	{
+													"type"			:	"AmbientLight",
+													"color"			:	"#fff",
+													"intensity"		:	1
+												},
+							"spotlight"		:	{
+													"type"			:	"SpotLight",
+													"color"			:	"#ccc",
+													"position"		:	[20,30,30],
+													"target"		:	[-1,-1,-1],
+													"intensity"		:	1.2,
+													"distance"		:	200,
+													"decay"			:	0,
+													"angle"			:	60,
+													"penumbra"		:	0.4,
+													"castShadow"	:	true,
+													"shadow"		:	{
+																			"radius"		:	1,
+																			"bias"			:	0.00000001,
+																			"mapSize" 		:	{
+																									"width"  	: 	1024,
+																									"height" 	: 	1024
+																								},
+																			"camera"		:	{
+																									"near" 		:	1,
+																									"far" 		:	120,
+																									"fov"		:	10
+																								}
+																		}
+												}
+							}
+			
+}

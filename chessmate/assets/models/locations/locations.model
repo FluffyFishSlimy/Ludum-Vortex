@@ -1,0 +1,692 @@
+{
+	"assets"		:	{
+							"secret-scene"	:	{
+													"type"			:	"ChessLocation",
+													"file"			:	"location.json",
+													"description"	:	"Top Secret",
+													"thumbnail"		:	"secret/thumbnail.jpg",
+													"flatShading"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													"styles"		:	{
+																			"music_on"			:	{	"audio"			:	{"file":"/assets/audio/Ludum Dare 30 - Track 6.mp3", "volume":1, "loop":"Repeat", "global":true}}
+																		},
+													"children"		:	{
+																			"ambient"		:	{
+																									"type"			:	"AmbientLight",
+																									"color"			:	"#e4e4e4",
+																									"intensity"		:	0.8
+																								},
+																			"spotlight"		:	{
+																									"type"			:	"SpotLight",
+																									"color"			:	"#aaa",
+																									"position"		:	[16,22,16],
+																									"target"		:	[-1,-1,-1],
+																									"intensity"		:	1,
+																									"distance"		:	100,
+																									"decay"			:	0,
+																									"angle"			:	60,
+																									"penumbra"		:	0.4,
+																									"castShadow"	:	true,
+																									"shadow"		:	{
+																															"radius"		:	1.2,
+																															"bias"			:	0.00000000001,
+																															"mapSize" 		:	{
+																																					"width"  	: 	1240,
+																																					"height" 	: 	1240
+																																				},
+																															"camera"		:	{
+																																					"near" 		:	1,
+																																					"far" 		:	120,
+																																					"fov"		:	10
+																																				}
+																														}
+																								},
+																			"desk"			:	{
+																									"file"			:	"secret/desk.json",
+																									"flatShading"	:	true,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	false,
+																									"position"		:	[-2,0,-10],
+																									"scale"			:	5
+																								},
+																			"desk"			:	{
+																									"file"			:	"secret/desk2.json",
+																									"flatShading"	:	true,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	false,
+																									"rotation"		:	[0,0,0],
+																									"position"		:	[0,0,0],
+																									"scale"			:	[30,28,28]
+																								},
+																			"!mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.01,0],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	60,
+																									"height"		:	60,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.06,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"white",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								},
+																			"cash"			:	{
+																									"file"			:	"/assets/models/props/money/pile.json",
+																									"flatShading"	:	true,
+																									"side"			:	"DoubleSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,10,0],																									
+																									"position"		:	[7,1, 13.5],
+																									"scale"			:	3,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#aaa"
+																															}
+																														}
+																								},
+																			"newspaper"		:	{
+																									"file"			:	"/assets/models/props/newspaper/newspaper.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	false,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-50,0],																									
+																									"position"		:	[20,0,-10],
+																									"scale"			:	20,
+																									"!children"		:	{
+																															"corner"		:	{
+																																					"file"		:	"newspaper_corner.json",
+																																					"action"	:	"idle",
+																																					"actions"	:	{
+																																										"idle"		:	{	"start":12	,	"end":13	,	"duration":1.0	,	"next"	:	"idle"	,	"weight":2	,	"crossfade"		:	0.15},
+																																										"idle.lift"	:	{	"start":0	,	"end":12	,	"duration":2.0	,	"next"	:	"idle"	,	"weight":1	,	"crossfade"		:	0.15}
+																																									}
+																																				}
+																														}
+																								},
+																			"envelope"		:	{
+																									"file"			:	"/assets/models/props/envelope/envelope.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,10,0],																									
+																									"position"		:	[-19,0.05,-10],
+																									"scale"			:	11,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#ccc"
+																															}
+																														}
+																								},
+																			"folder"		:	{
+																									"file"			:	"/assets/models/props/envelope/folder.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,10,0],																									
+																									"position"		:	[-4,0,-8.5],
+																									"scale"			:	11,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#babab6"
+																															}
+																														}
+																								},
+																			"secretdoc"		:	{
+																									"file"			:	"/assets/models/props/envelope/secretdoc.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-20,0],																									
+																									"position"		:	[7.5,0.02,1],
+																									"scale"			:	9,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#a3a3a3"
+																															}
+																														}
+																								},
+																			"secretdoc2"		:	{
+																									"file"			:	"/assets/models/props/envelope/secretdoc.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,70,0],																									
+																									"position"		:	[-11,0.1,16],
+																									"scale"			:	8,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#a3a3a3"
+																															}
+																														}
+																								},
+																			"starbucks"		:	{
+																									"file"			:	"/assets/models/props/coffee/starbucks.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-10,0],																									
+																									"position"		:	[13.75,-0.1,7],
+																									"scale"			:	11,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#b5b5b5"
+																															}
+																														}
+																								},
+																			"gun"			:	{
+																									"file"			:	"/assets/models/props/handgun/handgun.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,30,0],																									
+																									"position"		:	[-15,0,-13],
+																									"scale"			:	6,
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color" 		:	"#a4a4a4"
+																															}
+																														},
+																									"children"		:	{
+																															"bullet1"		:	{
+																																					"file"			:	"/assets/models/props/handgun/bullet.json",
+																																					"flatShading"	:	false,
+																																					"side"			:	"FrontSide",
+																																					"receiveShadow"	:	true,
+																																					"castShadow"	:	true,
+																																					"rotation"		:	[0,-20,0],																									
+																																					"position"		:	[0.3,0.05,0.3],
+																																					"scale"			:	1,
+																																					"materials"		:	{
+																																											"*":
+																																											{
+																																												"color" 		:	"#ccc"
+																																											}
+																																										}
+																																				},																									
+																															"bullet2"		:	{
+																																					"file"			:	"/assets/models/props/handgun/bullet.json",
+																																					"flatShading"	:	false,
+																																					"side"			:	"FrontSide",
+																																					"receiveShadow"	:	true,
+																																					"castShadow"	:	true,
+																																					"rotation"		:	[0,0,90],																									
+																																					"position"		:	[-0.5,0.04,-1],
+																																					"scale"			:	1,
+																																					"materials"		:	{
+																																											"*":
+																																											{
+																																												"color" 		:	"#ccc"
+																																											}
+																																										}
+																																				}																									
+																														}
+																								},
+																			"passport1"		:	{
+																									"file"			:	"/assets/models/props/passport/passport.json",
+																									"flatShading"	:	true,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-20,0],																									
+																									"position"		:	[-16,0.1,2],
+																									"scale"			:	4,
+																									"materials"		:	{
+																															"cover"		:	{ "color" : "#f55"}
+																														}
+																								},
+																			"passport2"		:	{
+																									"file"			:	"/assets/models/props/passport/passport.json",
+																									"flatShading"	:	true,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-5,0],																									
+																									"position"		:	[-16.3,0.4,2],
+																									"scale"			:	4,
+																									"!materials"		:	{
+																															"cover"		:	{ "color" : "#555"}
+																														}
+																								}
+																		}
+												},
+							"halloween-scene":	{
+													"type"			:	"ChessLocation",
+													"file"			:	"location.json",
+													"description"	:	"Halloween",
+													"thumbnail"		:	"halloween/thumbnail.jpg",
+													"flatShading"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													"styles"		:	{
+																			"music_on"			:	{	"audio"			:	{"file":"/assets/audio/Ludum Dare 38 - Track 10.mp3", "volume":1, "loop":"Repeat", "global":true}}
+																		},
+													"children"		:	{
+																			"ambient"		:	{
+																									"type"			:	"AmbientLight",
+																									"color"			:	"#888",
+																									"intensity"		:	0.8
+																								},
+																			"spotlight"		:	{
+																									"type"			:	"SpotLight",
+																									"color"			:	"#fff",
+																									"position"		:	[16,22,16],
+																									"target"		:	[-1,-1,-1],
+																									"intensity"		:	1,
+																									"distance"		:	100,
+																									"decay"			:	0,
+																									"angle"			:	60,
+																									"penumbra"		:	0.4,
+																									"castShadow"	:	true,
+																									"shadow"		:	{
+																															"radius"		:	1.2,
+																															"bias"			:	0.00000000001,
+																															"mapSize" 		:	{
+																																					"width"  	: 	1240,
+																																					"height" 	: 	1240
+																																				},
+																															"camera"		:	{
+																																					"near" 		:	1,
+																																					"far" 		:	120,
+																																					"fov"		:	10
+																																				}
+																														}
+																								},
+																			"desk"			:	{
+																									"file"			:	"secret/desk.json",
+																									"flatShading"	:	true,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	false,
+																									"position"		:	[4,0,-10],
+																									"scale"			:	5
+																								},
+																			"spider"		:	{
+																									"file"			:	"/assets/models/props/creatures/spider.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[6,0,-14],
+																									"rotation"		:	[0,-30,0],
+																									"scale"			:	1.5
+																								},
+																			"spider"		:	{
+																									"file"			:	"/assets/models/props/creatures/spider.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[-13,5.5,-8.2],
+																									"rotation"		:	[50,30,-12],
+																									"scale"			:	0.8
+																								},
+																			"axe"			:	{
+																									"file"			:	"/assets/models/props/halloween/axe.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[4,0,-18],
+																									"rotation"		:	[0,-20,0],
+																									"scale"			:	11,
+																									"!materials"		:	{
+																															"Blade":
+																															{
+																																"type"			:	"StandardMaterial",	
+																																"transparent"	:	true,
+																																"opacity"		:	1,
+																																
+																																"color"			:	"grey",
+																																
+																																"metalness"		:	0.5,
+																																"roughness"		:	0.4,
+																																"envMap"		:	{
+																																						"type"		:	"Texture",
+																																						"mapping"	:	"SphericalReflectionMapping",
+																																						"file"		:	"/assets/textures/spherical/chrome.jpg"
+																																					}	,
+																																"envMapIntensity":	2
+																															}
+																														}
+																								},
+																			"knife"			:	{
+																									"file"			:	"/assets/models/props/halloween/knife.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[14,0,8.6],
+																									"rotation"		:	[0,50,0],
+																									"scale"			:	3.5,
+																									"materials"		:	{
+																															"Blade":
+																															{
+																																"type"			:	"StandardMaterial",	
+																																"transparent"	:	true,
+																																"opacity"		:	1,
+																																
+																																"color"			:	"grey",
+																																
+																																"metalness"		:	0.6,
+																																"roughness"		:	0.2,
+																																"envMap"		:	{
+																																						"type"		:	"Texture",
+																																						"mapping"	:	"SphericalReflectionMapping",
+																																						"file"		:	"/assets/textures/spherical/chrome.jpg"
+																																					}	,
+																																"envMapIntensity":	2
+																															}
+																														}
+																								},
+																			"eyeball1"		:	{
+																									"file"			:	"/assets/models/props/halloween/eyeball_blue.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[13,-0.5,5],
+																									"rotation"		:	[0,0,0],
+																									"scale"			:	3.4
+																								},
+																			"eyeball2"		:	{
+																									"file"			:	"/assets/models/props/halloween/eyeball_blue.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[18,-1,10],
+																									"rotation"		:	[0,-50,0],
+																									"scale"			:	3.4
+																								},
+																			"eyeball3"		:	{
+																									"file"			:	"/assets/models/props/halloween/eyeball_blue.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[20.2,-1.1,11],
+																									"rotation"		:	[0,130,0],
+																									"scale"			:	3.4
+																								},
+																			"eyeball4"		:	{
+																									"file"			:	"/assets/models/props/halloween/eyeball_brown.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[15,-0.2,4],
+																									"rotation"		:	[0,20,0],
+																									"scale"			:	3.4
+																								},
+																			"!eyeball5"		:	{
+																									"file"			:	"/assets/models/props/halloween/eyeball_brown.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[-16,-0.2,3],
+																									"rotation"		:	[-20,60,0],
+																									"scale"			:	3.4
+																								},
+																			"rat"			:	{
+																									"file"			:	"/assets/models/props/creatures/rat.model",
+																									"action"		:	"idle.attack",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"position"		:	[-18,0,-2],
+																									"rotation"		:	[0,80,0],
+																									"scale"			:	3
+																								},
+																			"pumpkin1"		:	{
+																									"file"			:	"/assets/models/props/halloween/pumpkin.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-50,0],																									
+																									"position"		:	[17,0,-3],
+																									"scale"			:	6,
+																									"materials"		:	{
+																															"*"				:	{ "color" : "#ccc"}
+																														},
+																									"children"		:	{
+																															"flame"			:	{
+																																					"type"			:	"ParticleFlame",
+																																					"position"		:	[ 0.1, 0.1, 0.1],
+																																					"partciles"		:	{
+																																											"number"		:	30,
+																																											"lifeTime"		:	2,
+																																											"startSize"		:	0.9,
+																																											"endSize"		:	1.2,
+																																											"velocity"		:	[ 0, 0.70, -0.05 ],
+																																											"velocityRange"	:	[ 0.15, 0.4, 0.15 ],
+																																											"acceleration"	:	[ 0, -0.4, 0 ],
+																																											"spinSpeedRange":	4,
+																																											"colorRamp"		:	[
+																																																	"yellow:0.25",
+																																																	"red:0.5",
+																																																	"black:0"
+																																																]
+																																										}
+																																				},
+
+																															"flamelight"	:	{
+																																					"type"			:	"SpotLight",
+																																					"color"			:	{"start":"#f00","end":"#f33","duration":0.35,"loop":"PingPong","easing":"Back.InOut"},
+																																					"position"		:	{"start":[-0.2,1,1.1],"end":[-0.2,1.5,1.1],"duration":0.75,"loop":"PingPong","easing":"Back.InOut"},
+																																					"target"		:	[-2,-5,10],
+																																					"distance"		:	100,
+																																					"decay"			:	0,
+																																					"angle"			:	60,
+																																					"penumbra"		:	0.4,
+																																					"castShadow"	:	true,
+																																					"shadow"		:	{
+																																											"radius"		:	1,
+																																											"bias"			:	0.00000001,
+																																											"mapSize" 		:	{
+																																																	"width"  	: 	512,
+																																																	"height" 	: 	512
+																																																},
+																																											"camera"		:	{
+																																																	"near" 		:	1,
+																																																	"far" 		:	120,
+																																																	"fov"		:	10
+																																																}
+																																										}
+																																				},
+																															"pointlight"	:	{
+																																					"type"			:	"PointLight",
+																																					"color"			:	"red",
+																																					"intensity"		:	1,
+																																					"distance"		:	20,
+																																					"decay"			:	0.5,
+																																					"position"		:	{"start":[0,0.75,0], "end":[0,0.2,0], "duration":0.5, "loop":"PingPong"},
+																																					"castShadow"	:	false
+																																				}																										
+																														}
+																								},
+																			"pumpkin2"		:	{
+																									"file"			:	"/assets/models/props/halloween/pumpkin.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-140,0],																									
+																									"position"		:	[-14,0,-12],
+																									"scale"			:	5,
+																									"materials"		:	{
+																															"*"				:	{ "color" : "#ccc"}
+																														}
+																								},
+																			"pumpkin3"		:	{
+																									"file"			:	"/assets/models/props/halloween/pumpkin.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,-140,0],																									
+																									"position"		:	[-15,0,12],
+																									"scale"			:	4,
+																									"materials"		:	{
+																															"*"				:	{ "color" : "#ccc"}
+																														}
+																								}
+																		}
+												},
+							"retro-scene":	{
+													"type"			:	"ChessLocation",
+													"file"			:	"location.json",
+													"description"	:	"Central Park",
+													"thumbnail"		:	"retro/thumbnail.jpg",
+													"flatShading"	:	true,
+													"receiveShadow"	:	true,
+													"side"			:	"FrontSide",
+													"scale"			:	1,
+													"styles"		:	{
+																			"music_on"			:	{	"audio"			:	{"file":"/assets/audio/Ludum Dare 30 - Track 6.mp3", "volume":1, "loop":"Repeat", "global":true}}
+																		},
+													"children"		:	{
+																			"ambient"		:	{
+																									"type"			:	"AmbientLight",
+																									"color"			:	"#e4e4e4",
+																									"intensity"		:	0.8
+																								},
+																			"spotlight"		:	{
+																									"type"			:	"SpotLight",
+																									"color"			:	"#aaa",
+																									"position"		:	[16,22,16],
+																									"target"		:	[-1,-1,-1],
+																									"intensity"		:	1,
+																									"distance"		:	100,
+																									"decay"			:	0,
+																									"angle"			:	60,
+																									"penumbra"		:	0.4,
+																									"castShadow"	:	true,
+																									"shadow"		:	{
+																															"radius"		:	1.2,
+																															"bias"			:	0.00000000001,
+																															"mapSize" 		:	{
+																																					"width"  	: 	1240,
+																																					"height" 	: 	1240
+																																				},
+																															"camera"		:	{
+																																					"near" 		:	1,
+																																					"far" 		:	120,
+																																					"fov"		:	10
+																																				}
+																														}
+																								},
+																			"surface"		:	{
+																									"file"			:	"retro/blue.json",
+																									"flatShading"	:	true,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	false,
+																									"rotation"		:	[0,0,0],
+																									"position"		:	[0,0,0],
+																									"scale"			:	[5,5,7.5],
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color"			:	"#fff",
+																																"specular"		:	"#333",
+																																"shininess"		:	5
+																															}	
+																														}
+																								},
+																			"!mirror"		:	{
+																									"type"			:	"Water",
+																									"normals"		:	" ",
+																									"position"		:	[0,0.1,0],
+																									"rotation"		:	[0,0,0],
+																									"width"			:	100,
+																									"height"		:	100,
+																									"distortion"	:	0.01,
+																									"alpha"			:	0.4,
+																									"speed"			:	0.1,
+																									"waterColor"	:	"white",
+																									"sunColor"		:	"white",
+																									"sunDirection"	:	[0,1,-2]
+																								},
+																			"console"		:	{
+																									"file"			:	"/assets/models/props/atari/console.json",
+																									"flatShading"	:	false,
+																									"side"			:	"FrontSide",
+																									"receiveShadow"	:	true,
+																									"castShadow"	:	true,
+																									"rotation"		:	[0,40,0],																									
+																									"position"		:	[-17,0.1,-12],
+																									"scale"			:	13,
+																									"!materials"		:	{
+																															"*"		:	{ "color" : "#f55"}
+																														}
+																								},
+																			"pacman"		:	{
+																									"file"			:	"/assets/models/props/atari/cartridge.json",
+																									"castShadow"	:	true,
+																									"receiveShadow"	:	true,
+																									"flatShading"	:	false,
+																									"position"		:	[17,0,0],
+																									"rotation"		:	[0,-20,0],
+																									"scale"			:	0.94,	
+																									"styles"		:	{
+																															"space-invaders":	{
+																																					"materials"		:	{
+																																											"*":{"map":"space-invaders-cartridge.jpg"}
+																																										}
+																																				}
+																														}
+																								},
+																			"invaders"		:	{
+																									"file"			:	"/assets/models/props/atari/cartridge.json",
+																									"castShadow"	:	true,
+																									"receiveShadow"	:	true,
+																									"flatShading"	:	false,
+																									"position"		:	[15,0,9],
+																									"rotation"		:	[0,-60,0],
+																									"scale"			:	0.9,
+																									"materials"		:	{
+																															"*":{"map":"space-invaders-cartridge.jpg"}
+																														}
+																								},
+																			"pacmanbox"		:	{
+																									"file"			:	"/assets/models/props/atari/box.json",
+																									"castShadow"	:	true,
+																									"receiveShadow"	:	true,
+																									"flatShading"	:	false,
+																									"position"		:	[14,0.02,-19],
+																									"rotation"		:	[0,65,0],
+																									"scale"			:	[1.55,1.4,1.55],
+																									"materials"		:	{
+																															"*":
+																															{
+																																"color"		:	"#999"
+																															}
+																														}														
+																								}
+																		}
+												}
+						}
+}

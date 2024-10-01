@@ -1,0 +1,24 @@
+{
+	"assets"		:	{
+							"classic-set"	:	{
+													"file"			:	"classic/set.model",
+													"description"	:	"Classic Chess Set"
+												},
+							"iconic-set"	:	{
+													"file"			:	"iconic/set.model",
+													"description"	:	"Iconic Chess Set"
+												},
+							"ornate-set"	:	{
+													"file"			:	"ornate/set.model",
+													"description"	:	"Ornate Chess Set"
+												},
+							"flat-set"		:	{
+													"file"			:	"flat/set.model",
+													"description"	:	"Flat Chess Set"
+												},
+							"stone-set"		:	{
+													"file"			:	"stone/set.model",
+													"description"	:	"Stone Chess Set"
+												}					
+						}
+}

@@ -1,0 +1,39 @@
+{
+    "materials": [{
+        "opacity": 1,
+        "mapDiffuseWrap": ["RepeatWrapping","RepeatWrapping"],
+        "depthTest": true,
+        "colorSpecular": [0,0,0],
+        "transparent": false,
+        "DbgIndex": 0,
+        "depthWrite": true,
+        "mapDiffuseAnisotropy": 1,
+        "mapDiffuse": "scheme.png",
+        "colorEmissive": [0,0,0],
+        "specularCoef": 50,
+        "blending": "NormalBlending",
+        "mapDiffuseRepeat": [1,1],
+        "colorAmbient": [0.64,0.64,0.64],
+        "DbgColor": 15658734,
+        "shading": "phong",
+        "visible": true,
+        "DbgName": "scheme",
+        "colorDiffuse": [0.64,0.64,0.64],
+        "wireframe": false
+    }],
+    "name": "Plane.001Geometry",
+    "uvs": [[0,0,1,0,1,1,0,1]],
+    "faces": [43,0,1,3,2,0,0,1,2,3,0,0,0,0],
+    "vertices": [-1.99418,0,1.99418,1.99418,0,1.99418,-1.99418,-0,-1.99418,1.99418,-0,-1.99418],
+    "normals": [0,1,0],
+    "metadata": {
+        "type": "Geometry",
+        "generator": "io_three",
+        "vertices": 4,
+        "materials": 1,
+        "uvs": 1,
+        "faces": 1,
+        "version": 3,
+        "normals": 1
+    }
+}

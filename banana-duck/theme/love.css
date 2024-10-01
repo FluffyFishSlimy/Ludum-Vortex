@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: lighter;
+    color: #1a1c2c;
+}
+
+body {
+    background-color: #000;
+    color: #1a1c2c;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
+}
+
+footer {
+    font-family: arial;
+    font-size: 12px;
+    padding-left: 10px;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+#canvas {
+    padding: 0;
+    display: block;
+    border: 0px solid #1a1c2c;
+    visibility: hidden;
+    width: 512px;
+    height: 512px;
+}
+
+#loadingCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+button {
+    background-color: #1a1c2c;
+    color: #f4f4f4;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 16px 8px;
+    font-size: 14px;
+    cursor: pointer; 
+}
+
+footer {
+    max-width: 90vw;
+}

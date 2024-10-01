@@ -1,0 +1,123 @@
+{
+	"type"			:	"ChessSet",
+	"description"	:	"Holographic",
+	"credit"		:	"Itizso",
+
+	"side"			:	"FrontSide",
+
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"flatShading"	:	true,
+	"effects"		:	{
+							"!afterimage"	:	{
+													"type"			:	"AfterImageEffect",
+													"amount"		:	0.9
+												},
+							"film"			:	{
+													"type"				:	"FilmEffect",
+													"noiseIntensity"	:	0.4,
+													"scanlinesIntensity":	0.6,
+													"scanlinesCount"	:	1200,
+													"enabled"			:	true
+												},
+							"!edge"			:	{
+													"type"				:	"EdgeDetectionEffect",
+													"color"				:	"cyan",
+													"opacity"			:	0.6
+												},
+							"!focus"		:	{
+													"type"			:	"FocusEffect",
+													"focus"			:	10,
+													"aperture"		:	0.0005,
+													"maxblur"		:	0.02
+												},
+							"!glitch"		:	{
+													"type"			:	"GlitchEffect",
+													"wild"			:	false
+												},
+							"shift"		:	{
+													"type"			:	"RGBShiftEffect",
+													"amount"		:	0.0025,
+													"angle"			:	60,
+													"enabled"		:	true
+												},
+							"wave"			:	{
+													"type"				:	"WaveEffect",
+													"thickWave"			:	0.2,
+													"thinWave"			:	0.4,
+													"speed"				:	0.02,
+													"roll"				:	0.0,
+													"enabled"		:	true
+												}
+												
+						},
+						
+	"style"			:	"normal",
+	"styles"		:	{
+							"normal"		:	{	"materials"	: { "*" : { "type"	: "PhongMaterial", "specular":"#222" , "transparent":true, "opacity":0.85, "alphaTest":0.4	} }, "castShadow":true },
+							"white"			:	{	"materials"	: { "*" : { "color"	: "#fff"								} } },
+							"black"			:	{	"materials"	: { "*" : { "color"	: "#888"								} } },
+							"faded"			:	{	"materials"	: { "*" : { "transparent": true, "opacity":0.4, "alphaTest":0.4, "specular":"#fff"		} }, "castShadow":false }
+						},
+	
+	
+	"assets"		:	{
+							"holo-king"	:	{
+													"file"			:	"../stone/king.json",
+													"scale"			:	1.43
+												},
+							"holo-queen"	:	{
+													"file"			:	"../stone/queen.json",
+													"scale"			:	1.4
+												},
+							"holo-bishop"	:	{
+													"file"			:	"../stone/bishop.json",
+													"styles"		:	{
+																			"white"			:	{	"materials"	: { "*" : { "color"	: "#ddd"								} } },
+																			"black"			:	{	"materials"	: { "*" : { "color"	: "#777"								} } }
+																		},
+													"scale"			:	1.36
+												},
+							"holo-knight"	:	{
+													"file"			:	"../stone/knight.json",
+													"scale"			:	1.4
+												},
+							"holo-rook"	:	{
+													"file"			:	"../stone/rook.json",
+													"styles"		:	{
+																			"white"			:	{	"materials"	: { "*" : { "color"	: "#ddd"								} } },
+																			"black"			:	{	"materials"	: { "*" : { "color"	: "#777"								} } }
+																		},
+													"scale"			:	1.4
+												},
+							"holo-pawn"	:	{
+													"file"			:	"../stone/pawn.json",
+													"styles"		:	{
+																			"white"			:	{	"materials"	: { "*" : { "color"	: "#ddd"								} } },
+																			"black"			:	{	"materials"	: { "*" : { "color"	: "#666"								} } }
+																		},
+													"scale"			:	1.4
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"holo-king",
+													"queen"			:	"holo-queen",
+													"knight"		:	"holo-knight",
+													"bishop"		:	"holo-bishop",
+													"rook"			:	"holo-rook",
+													"pawn"			:	"holo-pawn"
+												},
+							"black"			:	{
+													"king"			:	"holo-king",
+													"queen"			:	"holo-queen",
+													"knight"		:	"holo-knight",
+													"bishop"		:	"holo-bishop",
+													"rook"			:	"holo-rook",
+													"pawn"			:	"holo-pawn"
+												}
+						}
+						
+}

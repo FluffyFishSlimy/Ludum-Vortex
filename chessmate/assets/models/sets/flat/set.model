@@ -1,0 +1,134 @@
+{
+	"type"			:	"ChessSet",
+	"description"	:	"Quasi Flat chess set",
+	"credit"		:	"Itizso",
+
+	"flatShading"	:	true,
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"side"			:	"FrontSide",
+	"symbolic"		:	true,
+
+	"style"			:	"normal",
+	"styles"		:	{
+							"normal"		:	{
+													"castShadow"	:	true,
+													"materials"		:	{
+																			"*":
+																			{
+																				"type"			:	"PhongMaterial",
+																				"transparent"	:	true,
+																				"opacity"		:	1,
+																				"depthTest"		:	true
+																			}
+																		}
+												},
+							"faded"			:	{
+													"castShadow"	:	false,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"opacity"		:	0.5,
+																				"depthTest"		:	false
+																			}
+																		}
+												},
+							"white"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"#B89A77",
+																				"shininess"		:	30,
+																				"specular"		:	"#111"
+																			}
+																		}
+												},
+							"black"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"#222",
+																				"shininess"		:	1,
+																				"specular"	:	"#aaa"
+																			}
+																		}
+												}
+						},
+	
+	
+	"assets"		:	{
+							"flat-king"	:	{
+													"file"			:	"K.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.0,
+													"children"		:	{
+																			"hitbox"	:	{ "file":"../bounds.json", "materials":{"*":{"alphaTest":0.9,"opacity":0.01}}}
+																		}
+												},
+							"flat-queen":	{
+													"file"			:	"Q.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.0,
+													"children"		:	{
+																			"hitbox"	:	{ "file":"../bounds.json", "materials":{"*":{"alphaTest":0.9,"opacity":0.01}}, "scale":0.7}
+																		}
+												},
+							"flat-bishop":	{
+													"file"			:	"B.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.9,
+													"children"		:	{
+																			"hitbox"	:	{ "file":"../bounds.json", "materials":{"*":{"alphaTest":0.9,"opacity":0.01}}, "scale":0.7}
+																		}
+												},
+							"flat-knight":	{
+													"file"			:	"N.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"rotation"		:	[0,90,0],
+													"scale"			:	0.9,
+													"children"		:	{
+																			"hitbox"	:	{ "file":"../bounds.json", "materials":{"*":{"alphaTest":0.9,"opacity":0.01}}, "scale":0.7}
+																		}
+												},
+							"flat-rook"	:	{
+													"file"			:	"R.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.9,
+													"children"		:	{
+																			"hitbox"	:	{ "file":"../bounds.json", "materials":{"*":{"alphaTest":0.9,"opacity":0.01}}, "scale":0.7}
+																		}
+												},
+							"flat-pawn"	:	{
+													"file"			:	"P.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.85,
+													"children"		:	{
+																			"hitbox"	:	{ "file":"../bounds.json", "materials":{"*":{"alphaTest":0.9,"opacity":0.01}}, "scale":0.7}
+																		}
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"flat-king",
+													"queen"			:	"flat-queen",
+													"knight"		:	"flat-knight",
+													"bishop"		:	"flat-bishop",
+													"rook"			:	"flat-rook",
+													"pawn"			:	"flat-pawn"
+												},
+							"black"			:	{
+													"king"			:	"flat-king",
+													"queen"			:	"flat-queen",
+													"knight"		:	{
+																			"asset":"flat-knight",
+																			"rotation":[0,0,0]
+																		},
+													"bishop"		:	"flat-bishop",
+													"rook"			:	"flat-rook",
+													"pawn"			:	"flat-pawn"
+												}
+						}
+						
+}

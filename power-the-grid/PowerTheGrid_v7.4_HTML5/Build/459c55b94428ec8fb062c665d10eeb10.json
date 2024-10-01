@@ -1,0 +1,19 @@
+{
+"companyName": "StepFurtherStudio",
+"productName": "PTG",
+"productVersion": "1.0",
+"dataUrl": "ce806e2dcdcc8f1808cdc37df3d7caa1.unityweb",
+"asmCodeUrl": "1f58cdd6f55a6d8b8898952b7db83a5d.unityweb",
+"asmMemoryUrl": "861c72980e738a5ddd6b14ceef48f274.unityweb",
+"asmFrameworkUrl": "578806433f3f9b34ead2b941c2d08bcd.unityweb",
+"asmSymbolsUrl": "4ef0375c2078851191861d11211bcd15.unityweb",
+"TOTAL_MEMORY": 2130706432,
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#4B803B",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.9f1"
+}

@@ -1,0 +1,151 @@
+{
+	"type"			:	"HolographicChessSet",
+	"description"	:	"Iconic chess set",
+	"credit"		:	"Itizso",
+
+	"flatShading"	:	false,
+	"castShadow"	:	true,
+	"receiveShadow"	:	true,
+	"side"			:	"FrontSide",
+
+	"style"			:	"normal",
+	"effects"		:	{
+							"!afterimage"	:	{
+													"type"			:	"AfterImageEffect",
+													"amount"		:	0.9
+												},
+							"film"			:	{
+													"type"				:	"FilmEffect",
+													"noiseIntensity"	:	0.4,
+													"scanlinesIntensity":	0.6,
+													"scanlinesCount"	:	1200,
+													"enabled"			:	true
+												},
+							"!edge"			:	{
+													"type"				:	"EdgeDetectionEffect",
+													"color"				:	"cyan",
+													"opacity"			:	0.6
+												},
+							"!focus"		:	{
+													"type"			:	"FocusEffect",
+													"focus"			:	10,
+													"aperture"		:	0.0005,
+													"maxblur"		:	0.02
+												},
+							"!glitch"		:	{
+													"type"			:	"GlitchEffect",
+													"wild"			:	false
+												},
+							"shift"			:	{
+													"type"			:	"RGBShiftEffect",
+													"amount"		:	0.0035,
+													"angle"			:	45,
+													"enabled"		:	true
+												},
+							"wave"			:	{
+													"type"				:	"WaveEffect",
+													"thickWave"			:	0.2,
+													"thinWave"			:	0.4,
+													"speed"				:	0.02,
+													"roll"				:	0.0,
+													"enabled"		:	true
+												}
+												
+						},
+	"styles"		:	{
+							"normal"		:	{
+													"castShadow"	:	true,
+													"materials"		:	{
+																			"*":
+																			{
+																				"type"			:	"PhongMaterial",
+																				"transparent"	:	true,
+																				"opacity"		:	0.8,
+																				"shininess"		:	30,
+																				"specular"		:	"#111"
+																			}
+																		}
+												},
+							"faded"			:	{
+													"castShadow"	:	false,
+													"materials"		:	{
+																			"*"	:
+																			{
+																				"opacity"		:	0.5
+																			}
+																		}
+												},
+							"white"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"#336033"
+																			}
+																		}
+												},
+							"black"			:	{
+													"materials"		:	{
+																			"*":
+																			{
+																				"color"		:	"#213921"	
+																			}
+																		}
+												}
+						},
+	
+	
+	"assets"		:	{
+							"iconic-king"	:	{
+													"file"			:	"../classic/K.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"iconic-queen"	:	{
+													"file"			:	"../classic/Q.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"iconic-bishop"	:	{
+													"file"			:	"../classic/B.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	1.02
+												},
+							"iconic-knight"	:	{
+													"file"			:	"../classic/N.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"rotation"		:	[0,90,0],
+													"scale"			:	0.90
+												},
+							"iconic-rook"	:	{
+													"file"			:	"../classic/R.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.95
+												},
+							"iconic-pawn"	:	{
+													"file"			:	"../classic/P.json",
+													"materials"		:	{ "*" : { "type" :	"PhongMaterial" } },
+													"scale"			:	0.95
+												}
+							
+						},
+
+	"pieces"		:	{
+							"white"			:	{
+													"king"			:	"iconic-king",
+													"queen"			:	"iconic-queen",
+													"knight"		:	"iconic-knight",
+													"bishop"		:	"iconic-bishop",
+													"rook"			:	"iconic-rook",
+													"pawn"			:	"iconic-pawn"
+												},
+							"black"			:	{
+													"king"			:	"iconic-king",
+													"queen"			:	"iconic-queen",
+													"knight"		:	"iconic-knight",
+													"bishop"		:	"iconic-bishop",
+													"rook"			:	"iconic-rook",
+													"pawn"			:	"iconic-pawn"
+												}
+						}
+						
+}

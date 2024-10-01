@@ -1,0 +1,58 @@
+{
+	"type"			:	"ChessGame",	
+	"assets"		:	{
+							"view"			:	"view.model"
+						},
+	"effects"		:	{
+							"blur"			:	{
+													"type"			:	"GaussianBlurEffect",
+													"amount"		:	0.002,
+													"enabled"		:	false
+												}
+						},
+						
+	"position"		:	[0,0,0],
+	
+	"scale"			:	1.4,
+
+	"children"		:	{
+							"chessview"		:	{	
+													"file"			:	"asset:view",
+													"position"		:	{"start":[0,0,0], "end":[0,2,0], "duration":2, "loop":"PingPong", "easing":"Quadratic.InOut"},
+													"position"		:	[0,0,0],
+													"scale"			:	1
+												}
+						},
+
+	"sets"			:	[
+							"flat-set",
+							"iconic-set",
+							"classic-set",
+							"ornate-set",
+							"stone-set"
+						],
+						
+	"boards"		:	[
+							"modern-board",
+							"samsung-board",
+							"chalkblock-board",
+							"ornateflat-board",
+							"woodfold-board",
+							"marble-board",
+							"ornatethick-board"
+						],
+						
+
+	"locations"		:	[
+							"secret-scene",
+							"halloween-scene",
+							"retro-scene"
+						],
+						
+	"schemes"		:	[
+							"secret-scheme",
+							"halloween-scheme",
+							"picnic-scheme"
+						]
+						
+}

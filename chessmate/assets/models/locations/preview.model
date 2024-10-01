@@ -1,0 +1,23 @@
+{
+	"camera"		:	{	
+							"position" 		: 	[-2.59 , 29.08 , 25.17],
+							"target" 		: 	[0.21 , -0.36 , 1.32]
+						},
+	"!camera"		:	{	
+							"position" 		: 	[0,6,0],
+							"target" 		: 	[0,0,-4]
+						},
+						
+	"position"		:	[-3,4,0],
+	
+	"scale"			:	8,
+	"!scale"			:	1.8,
+	"children"		:	{
+							"brightness"	:	{
+													"type"			:	"AmbientLight",
+													"color"			:	"white",
+													"intensity"		:	0.2
+												}	
+						}
+			
+}
